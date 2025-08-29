@@ -1,4 +1,4 @@
-# Office Automation Database
+# Office Automation Database (Final Version)
 
 This repository contains the **SQL Server database schema** for a **scalable, secure, hybrid Office Automation System**.  
 Designed to support **20,000+ registered users** and **10,000+ concurrent sessions**, with a strong focus on **security, auditability, and performance**.
@@ -90,4 +90,19 @@ Designed to support **20,000+ registered users** and **10,000+ concurrent sessio
 
 ---
 
-## 📂 Repository Structure
+
+---
+
+## 📊 Stored Procedures Summary
+
+| Procedure | Description |
+|-----------|-------------|
+| sp_UserLogin | Verify user credentials and return active user |
+| sp_UserLogout | Mark a session as inactive |
+| sp_KillSession | Force logout a user session (admin) |
+| sp_CleanupExpiredSessions | Deactivate sessions inactive for X minutes |
+| sp_ArchiveAuditLogs | Move old audit logs to archive table |
+
+---
+
+This database is **ready for hybrid deployment** (Blazor Web + WinForms + API backend) and **optimized for high concurrency** while maintaining strong security and audit compliance.
