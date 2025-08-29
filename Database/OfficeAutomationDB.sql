@@ -1,15 +1,17 @@
 -- ============================================================
--- Office Automation Database Schema
--- Version: 1.0
--- Author: Reza Moradzade (Sample GitHub Project)
--- Description: Enterprise-Grade DB schema for Web + Windows + Mobile apps
+-- OfficeAutomationDB - Final Version
+-- Author: Reza Moradzade
+-- Features: Users, Roles, Sessions, Tasks, Files, Audit, SPs
 -- ============================================================
 
 -- ======================
--- 1. Drop old database if exists (CAUTION: removes data)
+-- 1. Drop Database if exists
 -- ======================
 IF DB_ID('OfficeAutomationDB') IS NOT NULL
-    DROP DATABASE OfficeAutomationDB;
+BEGIN
+    ALTER DATABASE [OfficeAutomationDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE [OfficeAutomationDB];
+END
 GO
 
 -- ======================
@@ -22,10 +24,10 @@ USE OfficeAutomationDB;
 GO
 
 -- ============================================================
--- 3. USERS & ROLES (Authentication + Authorization)
+-- 3. USERS & ROLES
 -- ============================================================
 
--- Users table with password hashing and soft-delete
+-- Users table
 CREATE TABLE Users (
     UserId INT IDENTITY(1,1) PRIMARY KEY,
     UserName NVARCHAR(100) NOT NULL UNIQUE,
@@ -39,41 +41,33 @@ CREATE TABLE Users (
     UpdatedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
     RowVersion ROWVERSION
 );
+GO
 
--- Password history to prevent reuse
-CREATE TABLE PasswordHistory (
-    HistoryId INT IDENTITY(1,1) PRIMARY KEY,
-    UserId INT NOT NULL FOREIGN KEY REFERENCES Users(UserId),
-    OldPasswordHash VARBINARY(256) NOT NULL,
-    ChangedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME()
-);
-
--- Roles
+-- Roles table
 CREATE TABLE Roles (
     RoleId INT IDENTITY(1,1) PRIMARY KEY,
     RoleName NVARCHAR(100) NOT NULL UNIQUE
 );
+GO
 
--- User ↔ Role mapping
+-- UserRoles mapping
 CREATE TABLE UserRoles (
     UserId INT NOT NULL FOREIGN KEY REFERENCES Users(UserId),
     RoleId INT NOT NULL FOREIGN KEY REFERENCES Roles(RoleId),
     AssignedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
     PRIMARY KEY(UserId, RoleId)
 );
-
--- Index for quick login lookups
-CREATE UNIQUE INDEX IX_Users_UserName ON Users(UserName);
+GO
 
 -- ============================================================
--- 4. SESSIONS (Authentication State Management)
+-- 4. SESSIONS
 -- ============================================================
 
 CREATE TABLE UserSessions (
     SessionId UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
     UserId INT NOT NULL FOREIGN KEY REFERENCES Users(UserId),
     SessionToken UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
-    ClientType NVARCHAR(50) NOT NULL,  -- Web, Windows, Mobile
+    ClientType NVARCHAR(50) NOT NULL,  -- Web / Windows / Mobile
     IPAddress NVARCHAR(45),
     DeviceInfo NVARCHAR(255),
     CreatedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
@@ -81,37 +75,20 @@ CREATE TABLE UserSessions (
     IsActive BIT NOT NULL DEFAULT 1,
     RowVersion ROWVERSION
 );
+GO
 
--- Prevent same user having both Web & Windows sessions simultaneously
+-- Unique index to prevent multiple active sessions per client type
 CREATE UNIQUE INDEX IX_UserSessions_SingleClient
     ON UserSessions(UserId, ClientType)
     WHERE IsActive = 1;
+GO
 
--- Cleanup job recommended: expire sessions after X minutes of inactivity
+-- Index for session cleanup queries
 CREATE INDEX IX_UserSessions_LastActivity ON UserSessions(LastActivity);
+GO
 
 -- ============================================================
--- 5. AUDIT LOGS (Monitoring user activity)
--- ============================================================
-
-CREATE TABLE AuditLogs (
-    LogId BIGINT IDENTITY(1,1) PRIMARY KEY,
-    UserId INT NULL FOREIGN KEY REFERENCES Users(UserId),
-    Action NVARCHAR(200) NOT NULL,
-    Details NVARCHAR(MAX),
-    IPAddress NVARCHAR(45),
-    Timestamp DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME()
-);
-
--- Optimized for reporting
-CREATE INDEX IX_AuditLogs_Timestamp ON AuditLogs(Timestamp);
-CREATE INDEX IX_AuditLogs_UserId ON AuditLogs(UserId);
-
--- Archiving strategy: move old data to AuditLogs_Archive
--- Partitioning by Timestamp recommended for 10M+ rows
-
--- ============================================================
--- 6. TASK MANAGEMENT
+-- 5. TASKS
 -- ============================================================
 
 CREATE TABLE Tasks (
@@ -126,9 +103,10 @@ CREATE TABLE Tasks (
     IsDeleted BIT NOT NULL DEFAULT 0,
     RowVersion ROWVERSION
 );
+GO
 
 -- ============================================================
--- 7. FILE STORAGE (Documents)
+-- 6. FILES
 -- ============================================================
 
 CREATE TABLE Files (
@@ -136,27 +114,206 @@ CREATE TABLE Files (
     FileName NVARCHAR(255) NOT NULL,
     ContentType NVARCHAR(100),
     FileSize BIGINT NOT NULL,
-    FileContent VARBINARY(MAX) NULL, -- Only for small files
+    FileContent VARBINARY(MAX) NULL,
     UploadedBy INT NOT NULL FOREIGN KEY REFERENCES Users(UserId),
     UploadedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
     IsDeleted BIT NOT NULL DEFAULT 0,
     RowVersion ROWVERSION
 );
-
--- Recommendation: For large files, store path/URL instead of binary
+GO
 
 -- ============================================================
--- 8. PERFORMANCE & MONITORING
+-- 7. AUDIT LOGS
 -- ============================================================
 
--- Optional system stats for monitoring usage
-CREATE TABLE SystemStats (
-    StatId INT IDENTITY(1,1) PRIMARY KEY,
-    MetricName NVARCHAR(100) NOT NULL,
-    MetricValue BIGINT NOT NULL,
-    RecordedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME()
+CREATE TABLE AuditLogs (
+    LogId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    UserId INT NULL FOREIGN KEY REFERENCES Users(UserId),
+    Action NVARCHAR(200) NOT NULL,
+    Details NVARCHAR(MAX),
+    IPAddress NVARCHAR(45),
+    Timestamp DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME()
 );
+GO
+
+CREATE INDEX IX_AuditLogs_Timestamp ON AuditLogs(Timestamp);
+GO
+CREATE INDEX IX_AuditLogs_UserId ON AuditLogs(UserId);
+GO
 
 -- ============================================================
--- END OF SCRIPT
+-- 8. FAILED LOGIN ATTEMPTS
+-- ============================================================
+
+CREATE TABLE FailedLoginAttempts (
+    AttemptId INT IDENTITY(1,1) PRIMARY KEY,
+    UserId INT NOT NULL FOREIGN KEY REFERENCES Users(UserId),
+    AttemptDate DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
+    IPAddress NVARCHAR(45)
+);
+GO
+
+-- ============================================================
+-- 9. STORED PROCEDURES
+-- ============================================================
+
+-- ---------------------------
+-- sp_UserLogin
+-- ---------------------------
+GO
+CREATE PROCEDURE sp_UserLogin
+    @UserName NVARCHAR(100),
+    @PasswordHash VARBINARY(256)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        SELECT UserId, UserName, IsActive
+        FROM Users
+        WHERE UserName = @UserName
+          AND PasswordHash = @PasswordHash
+          AND IsActive = 1;
+    END TRY
+    BEGIN CATCH
+        DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
+        RAISERROR(@ErrMsg,16,1);
+    END CATCH
+END;
+GO
+
+-- ---------------------------
+-- sp_UserLogout
+-- ---------------------------
+GO
+CREATE PROCEDURE sp_UserLogout
+    @SessionId UNIQUEIDENTIFIER
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        UPDATE UserSessions
+        SET IsActive = 0
+        WHERE SessionId = @SessionId;
+    END TRY
+    BEGIN CATCH
+        DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
+        RAISERROR(@ErrMsg,16,1);
+    END CATCH
+END;
+GO
+
+-- ---------------------------
+-- sp_KillSession (Admin)
+-- ---------------------------
+GO
+CREATE PROCEDURE sp_KillSession
+    @SessionId UNIQUEIDENTIFIER
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        UPDATE UserSessions
+        SET IsActive = 0
+        WHERE SessionId = @SessionId;
+    END TRY
+    BEGIN CATCH
+        DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
+        RAISERROR(@ErrMsg,16,1);
+    END CATCH
+END;
+GO
+
+-- ---------------------------
+-- sp_CleanupExpiredSessions
+-- ---------------------------
+GO
+CREATE PROCEDURE sp_CleanupExpiredSessions
+    @InactivityMinutes INT = 30
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        UPDATE UserSessions
+        SET IsActive = 0
+        WHERE DATEDIFF(MINUTE, LastActivity, SYSUTCDATETIME()) > @InactivityMinutes;
+    END TRY
+    BEGIN CATCH
+        DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
+        RAISERROR(@ErrMsg,16,1);
+    END CATCH
+END;
+GO
+
+-- ---------------------------
+-- sp_ArchiveAuditLogs
+-- ---------------------------
+GO
+CREATE TABLE AuditLogs_Archive (
+    LogId BIGINT IDENTITY(1,1) PRIMARY KEY,
+    UserId INT NULL,
+    Action NVARCHAR(200),
+    Details NVARCHAR(MAX),
+    IPAddress NVARCHAR(45),
+    Timestamp DATETIME2
+);
+GO
+
+GO
+CREATE PROCEDURE sp_ArchiveAuditLogs
+    @BeforeDate DATETIME2
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        INSERT INTO AuditLogs_Archive (UserId, Action, Details, IPAddress, Timestamp)
+        SELECT UserId, Action, Details, IPAddress, Timestamp
+        FROM AuditLogs
+        WHERE Timestamp < @BeforeDate;
+
+        DELETE FROM AuditLogs
+        WHERE Timestamp < @BeforeDate;
+    END TRY
+    BEGIN CATCH
+        DECLARE @ErrMsg NVARCHAR(4000) = ERROR_MESSAGE();
+        RAISERROR(@ErrMsg,16,1);
+    END CATCH
+END;
+GO
+
+-- ============================================================
+-- 10. SAMPLE DATA
+-- ============================================================
+
+-- Roles
+INSERT INTO Roles(RoleName) VALUES ('Admin'),('User');
+GO
+
+-- Users
+INSERT INTO Users(UserName, PasswordSalt, PasswordHash, Email, FullName)
+VALUES 
+('reza', CAST('SALT-REZA-2025' AS VARBINARY(128)), 0x66FC8389E376289DA1D290AC15847B0B84498F2A987CA942962F81511B7261E9, 'reza@example.com', 'Reza M'),
+('admin', CAST('SALT-ADMIN-2025' AS VARBINARY(128)), 0x77E6FEBDD31A6223D50C988A1D7FA1CC3ABA30A9C4AD73AE424C03C9353CD400, 'admin@example.com', 'Administrator');
+GO
+
+-- UserRoles
+INSERT INTO UserRoles(UserId, RoleId) VALUES (1,2),(2,1);
+GO
+
+-- Tasks
+INSERT INTO Tasks(Title, Description, AssignedTo, Status)
+VALUES ('Document Review','Review project documents',1,'Pending');
+GO
+
+-- Files
+INSERT INTO Files(FileName, FileSize, UploadedBy)
+VALUES ('SampleDoc.pdf',102400,1);
+GO
+
+-- ============================================================
+-- ✅ END OF SCRIPT
 -- ============================================================
