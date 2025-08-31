@@ -1,4 +1,4 @@
-# Office Automation Database (Final Version)
+# Office Automation Database
 
 This repository contains the **SQL Server database schema** for a **scalable, secure, hybrid Office Automation System**.  
 Designed to support **20,000+ registered users** and **10,000+ concurrent sessions**, with a strong focus on **security, auditability, and performance**.
