@@ -1,6 +1,15 @@
+-- ===============================================
+-- Database Setup Script for OfficeAutomationDB
+-- Author: Reza Moradzade
+-- Script Date: 2025-09-01
+-- Purpose: Create database, tables, indexes, constraints, default values, views, stored procedures, and seed initial data
+-- ===============================================
+
+-- Use the master database to create a new database
 USE [master]
 GO
-/****** Object:  Database [OfficeAutomationDB]    Script Date: 9/1/2025 8:05:27 PM ******/
+
+/****** Create the database OfficeAutomationDB ******/
 CREATE DATABASE [OfficeAutomationDB]
  CONTAINMENT = NONE
  ON  PRIMARY 
