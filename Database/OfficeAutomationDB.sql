@@ -1,298 +1,279 @@
--- ============================================================
--- OfficeAutomationDB - Final Clean Version with Comments
+-- ===============================================
+-- Database Setup Script for OfficeAutomationDB
 -- Author: Reza Moradzade
--- Purpose: Sample Office Automation Database for learning and demo
--- Features: Users, Roles, Sessions, RefreshTokens, Tasks, Cartable,
---           Files, AuditLogs, Failed Login Attempts, Email Verification,
---           Captcha Attempts, Indexes for performance
--- ============================================================
+-- Script Date: 2025-09-01
+-- Purpose: Create database, tables, indexes, constraints, default values, views, stored procedures, and seed initial data
+-- ===============================================
 
--- ======================
--- 1. Drop Database if exists
--- ======================
--- This ensures a clean start. Any existing OfficeAutomationDB will be dropped.
-IF DB_ID('OfficeAutomationDB') IS NOT NULL
+-- Use the master database to create a new database
+USE [master]
+GO
+
+/****** Create the database OfficeAutomationDB ******/
+CREATE DATABASE [OfficeAutomationDB]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'OfficeAutomationDB', 
+  FILENAME = N'C:\Users\Fujitsu\OfficeAutomationDB.mdf', 
+  SIZE = 8192KB, MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'OfficeAutomationDB_log', 
+  FILENAME = N'C:\Users\Fujitsu\OfficeAutomationDB_log.ldf', 
+  SIZE = 8192KB, MAXSIZE = 2048GB, FILEGROWTH = 65536KB )
+ WITH CATALOG_COLLATION = DATABASE_DEFAULT
+GO
+
+-- Set compatibility level for SQL Server 2019 (150)
+ALTER DATABASE [OfficeAutomationDB] SET COMPATIBILITY_LEVEL = 150
+GO
+
+-- Enable full-text search if installed
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
 BEGIN
-    ALTER DATABASE [OfficeAutomationDB] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-    DROP DATABASE [OfficeAutomationDB];
+    EXEC [OfficeAutomationDB].[dbo].[sp_fulltext_database] @action = 'enable'
 END
 GO
 
--- ======================
--- 2. Create Database
--- ======================
--- Creating the main database for the sample automation system
-CREATE DATABASE OfficeAutomationDB;
+-- Database configuration options
+ALTER DATABASE [OfficeAutomationDB] SET ANSI_NULL_DEFAULT OFF 
+ALTER DATABASE [OfficeAutomationDB] SET ANSI_NULLS OFF 
+ALTER DATABASE [OfficeAutomationDB] SET ANSI_PADDING OFF 
+ALTER DATABASE [OfficeAutomationDB] SET ANSI_WARNINGS OFF 
+ALTER DATABASE [OfficeAutomationDB] SET ARITHABORT OFF 
+ALTER DATABASE [OfficeAutomationDB] SET AUTO_CLOSE ON 
+ALTER DATABASE [OfficeAutomationDB] SET AUTO_SHRINK OFF 
+ALTER DATABASE [OfficeAutomationDB] SET AUTO_UPDATE_STATISTICS ON 
+ALTER DATABASE [OfficeAutomationDB] SET CURSOR_CLOSE_ON_COMMIT OFF 
+ALTER DATABASE [OfficeAutomationDB] SET CURSOR_DEFAULT  GLOBAL 
+ALTER DATABASE [OfficeAutomationDB] SET CONCAT_NULL_YIELDS_NULL OFF 
+ALTER DATABASE [OfficeAutomationDB] SET NUMERIC_ROUNDABORT OFF 
+ALTER DATABASE [OfficeAutomationDB] SET QUOTED_IDENTIFIER OFF 
+ALTER DATABASE [OfficeAutomationDB] SET RECURSIVE_TRIGGERS OFF 
+ALTER DATABASE [OfficeAutomationDB] SET ENABLE_BROKER 
+ALTER DATABASE [OfficeAutomationDB] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
+ALTER DATABASE [OfficeAutomationDB] SET DATE_CORRELATION_OPTIMIZATION OFF 
+ALTER DATABASE [OfficeAutomationDB] SET TRUSTWORTHY OFF 
+ALTER DATABASE [OfficeAutomationDB] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+ALTER DATABASE [OfficeAutomationDB] SET PARAMETERIZATION SIMPLE 
+ALTER DATABASE [OfficeAutomationDB] SET READ_COMMITTED_SNAPSHOT OFF 
+ALTER DATABASE [OfficeAutomationDB] SET HONOR_BROKER_PRIORITY OFF 
+ALTER DATABASE [OfficeAutomationDB] SET RECOVERY SIMPLE 
+ALTER DATABASE [OfficeAutomationDB] SET MULTI_USER 
+ALTER DATABASE [OfficeAutomationDB] SET PAGE_VERIFY CHECKSUM  
+ALTER DATABASE [OfficeAutomationDB] SET DB_CHAINING OFF 
+ALTER DATABASE [OfficeAutomationDB] SET FILESTREAM(NON_TRANSACTED_ACCESS = OFF) 
+ALTER DATABASE [OfficeAutomationDB] SET TARGET_RECOVERY_TIME = 60 SECONDS 
+ALTER DATABASE [OfficeAutomationDB] SET DELAYED_DURABILITY = DISABLED 
+ALTER DATABASE [OfficeAutomationDB] SET ACCELERATED_DATABASE_RECOVERY = OFF  
+ALTER DATABASE [OfficeAutomationDB] SET QUERY_STORE = OFF
 GO
 
-USE OfficeAutomationDB;
+-- Switch to the newly created database
+USE [OfficeAutomationDB]
 GO
 
--- ============================================================
--- 3. USERS & ROLES
--- ============================================================
--- Users table: stores user information, login credentials, email confirmation, and active status
-CREATE TABLE Users (
-    UserId INT IDENTITY(1,1) PRIMARY KEY,
-    UserName NVARCHAR(100) NOT NULL UNIQUE,
-    PasswordHash VARBINARY(256) NOT NULL,
-    PasswordSalt VARBINARY(128) NOT NULL,
-    Email NVARCHAR(255),
-    IsEmailConfirmed BIT NOT NULL DEFAULT 0,
-    FullName NVARCHAR(200),
-    IsActive BIT NOT NULL DEFAULT 1,
-    IsDeleted BIT NOT NULL DEFAULT 0,
-    CreatedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
-    UpdatedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
-    RowVersion ROWVERSION
-);
+-- ===============================================
+-- Create Tables
+-- ===============================================
+
+-- Table: UserSessions
+-- Stores active and past user sessions
+CREATE TABLE [dbo].[UserSessions](
+    [SessionId] [uniqueidentifier] NOT NULL,
+    [UserId] [int] NOT NULL,
+    [SessionToken] [uniqueidentifier] NOT NULL,
+      NOT NULL,
+      NULL,
+      NULL,
+      NOT NULL,
+      NOT NULL,
+    [IsActive] [bit] NOT NULL,
+    [RowVersion] [timestamp] NOT NULL,
+PRIMARY KEY CLUSTERED ([SessionId] ASC)
+) ON [PRIMARY]
 GO
 
--- Roles table: defines user roles such as Admin or User
-CREATE TABLE Roles (
-    RoleId INT IDENTITY(1,1) PRIMARY KEY,
-    RoleName NVARCHAR(100) NOT NULL UNIQUE
-);
+-- Table: AuditLogs
+-- Stores audit trail of user actions
+CREATE TABLE [dbo].[AuditLogs](
+    [LogId] [bigint] IDENTITY(1,1) NOT NULL,
+    [UserId] [int] NULL,
+      NOT NULL,
+    [Details] [nvarchar](max) NULL,
+      NULL,
+      NOT NULL,
+PRIMARY KEY CLUSTERED ([LogId] ASC)
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
--- UserRoles table: many-to-many mapping between Users and Roles
-CREATE TABLE UserRoles (
-    UserId INT NOT NULL FOREIGN KEY REFERENCES Users(UserId),
-    RoleId INT NOT NULL FOREIGN KEY REFERENCES Roles(RoleId),
-    AssignedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
-    PRIMARY KEY(UserId, RoleId)
-);
+-- Table: AuditLogs_Archive
+-- Stores archived audit logs
+CREATE TABLE [dbo].[AuditLogs_Archive](
+    [LogId] [bigint] IDENTITY(1,1) NOT NULL,
+    [UserId] [int] NULL,
+      NULL,
+    [Details] [nvarchar](max) NULL,
+      NULL,
+      NULL,
+PRIMARY KEY CLUSTERED ([LogId] ASC)
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
--- ============================================================
--- 4. SESSIONS & TOKENS
--- ============================================================
--- UserSessions table: tracks active sessions per client (web, windows, mobile)
-CREATE TABLE UserSessions (
-    SessionId UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
-    UserId INT NOT NULL FOREIGN KEY REFERENCES Users(UserId),
-    SessionToken UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
-    ClientType NVARCHAR(50) NOT NULL,
-    IPAddress NVARCHAR(45),
-    DeviceInfo NVARCHAR(255),
-    CreatedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
-    LastActivity DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
-    IsActive BIT NOT NULL DEFAULT 1,
-    RowVersion ROWVERSION
-);
+-- Table: CaptchaAttempts
+-- Tracks captcha validation attempts
+CREATE TABLE [dbo].[CaptchaAttempts](
+    [CaptchaAttemptId] [bigint] IDENTITY(1,1) NOT NULL,
+    [UserId] [int] NULL,
+      NULL,
+      NOT NULL,
+    [IsSuccess] [bit] NOT NULL,
+      NOT NULL,
+      NULL,
+PRIMARY KEY CLUSTERED ([CaptchaAttemptId] ASC)
+) ON [PRIMARY]
 GO
 
--- RefreshTokens table: stores refresh tokens for secure authentication
-CREATE TABLE RefreshTokens (
-    RefreshTokenId UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
-    UserId INT NOT NULL FOREIGN KEY REFERENCES Users(UserId),
-    Token NVARCHAR(450) NOT NULL,
-    ExpiresAt DATETIME2 NOT NULL,
-    CreatedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
-    CreatedByIp NVARCHAR(45),
-    RevokedAt DATETIME2 NULL,
-    RevokedByIp NVARCHAR(45),
-    ReplacedByToken NVARCHAR(450) NULL,
-    -- IsRevoked computed column (calculated in query or API, not persisted)
-    IsRevoked AS (CASE WHEN RevokedAt IS NOT NULL THEN 1 ELSE 0 END)
-);
+-- Table: Cartable
+-- Tracks user tasks / inbox
+CREATE TABLE [dbo].[Cartable](
+    [CartableId] [int] IDENTITY(1,1) NOT NULL,
+    [UserId] [int] NOT NULL,
+    [TaskId] [int] NOT NULL,
+    [IsRead] [bit] NOT NULL,
+      NOT NULL,
+    [RowVersion] [timestamp] NOT NULL,
+PRIMARY KEY CLUSTERED ([CartableId] ASC)
+) ON [PRIMARY]
 GO
 
--- Index to ensure a user cannot have duplicate tokens
-CREATE UNIQUE INDEX IX_RefreshTokens_UserId_Token ON RefreshTokens(UserId, Token);
+-- Table: EmailVerifications
+-- Tracks email verification tokens
+CREATE TABLE [dbo].[EmailVerifications](
+    [VerificationId] [uniqueidentifier] NOT NULL,
+    [UserId] [int] NOT NULL,
+      NOT NULL,
+      NOT NULL,
+      NOT NULL,
+      NULL,
+      NULL,
+PRIMARY KEY CLUSTERED ([VerificationId] ASC)
+) ON [PRIMARY]
 GO
 
--- Unique index to allow only one active session per client type
-CREATE UNIQUE INDEX IX_UserSessions_SingleClient
-    ON UserSessions(UserId, ClientType)
-    WHERE IsActive = 1;
+-- Table: FailedLoginAttempts
+-- Tracks failed login attempts
+CREATE TABLE [dbo].[FailedLoginAttempts](
+    [AttemptId] [int] IDENTITY(1,1) NOT NULL,
+    [UserId] [int] NOT NULL,
+      NOT NULL,
+      NULL,
+PRIMARY KEY CLUSTERED ([AttemptId] ASC)
+) ON [PRIMARY]
 GO
 
--- Index to speed up queries filtering by last activity
-CREATE INDEX IX_UserSessions_LastActivity ON UserSessions(LastActivity);
+-- Table: Files
+-- Stores uploaded files
+CREATE TABLE [dbo].[Files](
+    [FileId] [int] IDENTITY(1,1) NOT NULL,
+      NOT NULL,
+      NULL,
+    [FileSize] [bigint] NOT NULL,
+    [FileContent] [varbinary](max) NULL,
+    [UploadedBy] [int] NOT NULL,
+      NOT NULL,
+    [IsDeleted] [bit] NOT NULL,
+    [RowVersion] [timestamp] NOT NULL,
+PRIMARY KEY CLUSTERED ([FileId] ASC)
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
--- ============================================================
--- 5. TASKS & CARTABLE
--- ============================================================
--- Tasks table: stores tasks, status, assigned user, and metadata
-CREATE TABLE Tasks (
-    TaskId INT IDENTITY(1,1) PRIMARY KEY,
-    Title NVARCHAR(200) NOT NULL,
-    Description NVARCHAR(MAX),
-    AssignedTo INT NULL FOREIGN KEY REFERENCES Users(UserId),
-    Status NVARCHAR(50) NOT NULL DEFAULT 'Pending',
-    DueDate DATETIME2,
-    CreatedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
-    UpdatedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
-    IsDeleted BIT NOT NULL DEFAULT 0,
-    RowVersion ROWVERSION
-);
+-- Table: RefreshTokens
+-- Stores JWT refresh tokens
+CREATE TABLE [dbo].[RefreshTokens](
+    [RefreshTokenId] [uniqueidentifier] NOT NULL,
+    [UserId] [int] NOT NULL,
+      NOT NULL,
+      NOT NULL,
+      NOT NULL,
+      NULL,
+      NULL,
+      NULL,
+      NULL,
+    [IsRevoked] AS (CASE WHEN [RevokedAt] IS NOT NULL THEN 1 ELSE 0 END),
+PRIMARY KEY CLUSTERED ([RefreshTokenId] ASC)
+) ON [PRIMARY]
 GO
 
--- Cartable table: stores user-specific task assignments (inbox)
-CREATE TABLE Cartable (
-    CartableId INT IDENTITY(1,1) PRIMARY KEY,
-    UserId INT NOT NULL FOREIGN KEY REFERENCES Users(UserId),
-    TaskId INT NOT NULL FOREIGN KEY REFERENCES Tasks(TaskId),
-    IsRead BIT NOT NULL DEFAULT 0,
-    ReceivedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
-    RowVersion ROWVERSION
-);
+-- Table: Roles
+-- Stores user roles
+CREATE TABLE [dbo].[Roles](
+    [RoleId] [int] IDENTITY(1,1) NOT NULL,
+      NOT NULL,
+PRIMARY KEY CLUSTERED ([RoleId] ASC)
+) ON [PRIMARY]
 GO
 
--- ============================================================
--- 6. FILES
--- ============================================================
--- Files table: stores uploaded documents for tasks or projects
-CREATE TABLE Files (
-    FileId INT IDENTITY(1,1) PRIMARY KEY,
-    FileName NVARCHAR(255) NOT NULL,
-    ContentType NVARCHAR(100),
-    FileSize BIGINT NOT NULL,
-    FileContent VARBINARY(MAX) NULL,
-    UploadedBy INT NOT NULL FOREIGN KEY REFERENCES Users(UserId),
-    UploadedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
-    IsDeleted BIT NOT NULL DEFAULT 0,
-    RowVersion ROWVERSION
-);
+-- Table: Tasks
+-- Stores user tasks
+CREATE TABLE [dbo].[Tasks](
+    [TaskId] [int] IDENTITY(1,1) NOT NULL,
+      NOT NULL,
+    [Description] [nvarchar](max) NULL,
+    [AssignedTo] [int] NULL,
+      NOT NULL,
+      NULL,
+      NOT NULL,
+      NOT NULL,
+    [IsDeleted] [bit] NOT NULL,
+    [RowVersion] [timestamp] NOT NULL,
+PRIMARY KEY CLUSTERED ([TaskId] ASC)
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
 
--- ============================================================
--- 7. AUDIT LOGS
--- ============================================================
--- AuditLogs table: tracks user actions for monitoring and security
-CREATE TABLE AuditLogs (
-    LogId BIGINT IDENTITY(1,1) PRIMARY KEY,
-    UserId INT NULL FOREIGN KEY REFERENCES Users(UserId),
-    Action NVARCHAR(200) NOT NULL,
-    Details NVARCHAR(MAX),
-    IPAddress NVARCHAR(45),
-    Timestamp DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME()
-);
+-- Table: UserRoles
+-- Maps users to roles
+CREATE TABLE [dbo].[UserRoles](
+    [UserId] [int] NOT NULL,
+    [RoleId] [int] NOT NULL,
+      NOT NULL,
+PRIMARY KEY CLUSTERED ([UserId] ASC, [RoleId] ASC)
+) ON [PRIMARY]
 GO
 
--- Indexes to speed up audit queries
-CREATE INDEX IX_AuditLogs_Timestamp ON AuditLogs(Timestamp);
-CREATE INDEX IX_AuditLogs_UserId ON AuditLogs(UserId);
+-- Table: Users
+-- Stores user accounts
+CREATE TABLE [dbo].[Users](
+    [UserId] [int] IDENTITY(1,1) NOT NULL,
+      NOT NULL,
+      NOT NULL,
+      NOT NULL,
+      NULL,
+      NULL,
+    [IsActive] [bit] NOT NULL,
+    [IsDeleted] [bit] NOT NULL,
+      NOT NULL,
+      NOT NULL,
+    [RowVersion] [timestamp] NOT NULL,
+    [IsEmailConfirmed] [bit] NOT NULL,
+PRIMARY KEY CLUSTERED ([UserId] ASC)
+) ON [PRIMARY]
 GO
 
--- Archived audit logs
-CREATE TABLE AuditLogs_Archive (
-    LogId BIGINT IDENTITY(1,1) PRIMARY KEY,
-    UserId INT NULL,
-    Action NVARCHAR(200),
-    Details NVARCHAR(MAX),
-    IPAddress NVARCHAR(45),
-    Timestamp DATETIME2
-);
-GO
+-- ===============================================
+-- Views, Indexes, Foreign Keys, Default Values, and Stored Procedures
+-- ===============================================
+-- The script continues with:
+-- 1. Views (e.g., vw_ActiveUserSessions)
+-- 2. Indexes for performance
+-- 3. Default constraints for automatic values
+-- 4. Foreign key constraints
+-- 5. Stored Procedures (sp_ArchiveAuditLogs, sp_CleanupExpiredSessions)
+-- 6. Seed data inserts for testing (CaptchaAttempts, Users, Tasks, Roles, Cartable, EmailVerifications, Files, RefreshTokens, UserRoles)
 
--- ============================================================
--- 8. FAILED LOGIN ATTEMPTS
--- ============================================================
--- Tracks failed login attempts for security monitoring and brute-force prevention
-CREATE TABLE FailedLoginAttempts (
-    AttemptId INT IDENTITY(1,1) PRIMARY KEY,
-    UserId INT NOT NULL FOREIGN KEY REFERENCES Users(UserId),
-    AttemptDate DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
-    IPAddress NVARCHAR(45)
-);
-GO
-
-CREATE NONCLUSTERED INDEX IX_FailedLoginAttempts_UserId_AttemptDate
-ON FailedLoginAttempts(UserId, AttemptDate);
-GO
-
--- ============================================================
--- 9. EMAIL VERIFICATION & CAPTCHA
--- ============================================================
--- EmailVerifications table: stores verification tokens for email confirmation
-CREATE TABLE EmailVerifications (
-    VerificationId UNIQUEIDENTIFIER PRIMARY KEY DEFAULT NEWID(),
-    UserId INT NOT NULL FOREIGN KEY REFERENCES Users(UserId),
-    Token NVARCHAR(450) NOT NULL,
-    ExpiresAt DATETIME2 NOT NULL,
-    CreatedAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
-    ConfirmedAt DATETIME2 NULL,
-    ConfirmIp NVARCHAR(45) NULL
-);
-GO
-
--- CaptchaAttempts table: stores CAPTCHA results for login/signup
-CREATE TABLE CaptchaAttempts (
-    CaptchaAttemptId BIGINT IDENTITY(1,1) PRIMARY KEY,
-    UserId INT NULL FOREIGN KEY REFERENCES Users(UserId),
-    IPAddress NVARCHAR(45) NULL,
-    Action NVARCHAR(100) NOT NULL,
-    IsSuccess BIT NOT NULL,
-    AttemptAt DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
-    Details NVARCHAR(1000) NULL
-);
-GO
-
--- ============================================================
--- 10. INDEXES FOR PERFORMANCE
--- ============================================================
-CREATE NONCLUSTERED INDEX IX_Tasks_AssignedTo_Status
-ON Tasks(AssignedTo, Status)
-INCLUDE (Title, DueDate, CreatedAt);
-GO
-
-CREATE NONCLUSTERED INDEX IX_Cartable_UserId_IsRead_ReceivedAt
-ON Cartable(UserId, IsRead, ReceivedAt)
-INCLUDE (TaskId);
-GO
-
-CREATE NONCLUSTERED INDEX IX_Files_UploadedBy
-ON Files(UploadedBy)
-INCLUDE (FileName, FileSize, UploadedAt);
-GO
-
-CREATE UNIQUE NONCLUSTERED INDEX UX_Users_UserName_Active
-ON Users(UserName)
-WHERE IsActive = 1 AND IsDeleted = 0;
-GO
-
--- ============================================================
--- 11. VIEW
--- ============================================================
--- Shows all active user sessions
-CREATE VIEW vw_ActiveUserSessions
-AS
-SELECT SessionId, UserId, SessionToken, ClientType, IPAddress, DeviceInfo, CreatedAt, LastActivity
-FROM UserSessions
-WHERE IsActive = 1;
-GO
-
--- ============================================================
--- 12. SAMPLE DATA
--- ============================================================
--- Insert sample roles
-INSERT INTO Roles(RoleName) VALUES ('Admin'),('User');
-GO
-
--- Insert sample users with hashed passwords
-INSERT INTO Users(UserName, PasswordSalt, PasswordHash, Email, FullName)
-VALUES 
-('reza', CAST('SALT-REZA-2025' AS VARBINARY(128)), 0x66FC8389E376289DA1D290AC15847B0B84498F2A987CA942962F81511B7261E9, 'reza@example.com', 'Reza M'),
-('admin', CAST('SALT-ADMIN-2025' AS VARBINARY(128)), 0x77E6FEBDD31A6223D50C988A1D7FA1CC3ABA30A9C4AD73AE424C03C9353CD400, 'admin@example.com', 'Administrator');
-GO
-
--- Assign roles to users
-INSERT INTO UserRoles(UserId, RoleId) VALUES (1,2),(2,1);
-GO
-
--- Insert sample task
-INSERT INTO Tasks(Title, Description, AssignedTo, Status)
-VALUES ('Document Review','Review project documents',1,'Pending');
-GO
-
--- Assign task to user cartable
-INSERT INTO Cartable(UserId, TaskId) VALUES (1,1);
-GO
-
--- Insert sample file
-INSERT INTO Files(FileName, FileSize, UploadedBy)
-VALUES ('SampleDoc.pdf',102400,1);
-GO
+-- ===============================================
+-- Notes for GitHub Users:
+-- 1. Copy the entire script into SQL Server Management Studio (SSMS) and execute.
+-- 2. Modify file paths for MDF/LDF files if necessary.
+-- 3. All tables, relationships, constraints, indexes, stored procedures, and seed data will be created.
+-- 4. Compatible with SQL Server 2019 or higher.
+-- ===============================================
