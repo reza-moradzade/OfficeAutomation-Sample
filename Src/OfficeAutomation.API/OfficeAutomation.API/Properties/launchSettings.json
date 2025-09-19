@@ -1,0 +1,50 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+
+  // IIS settings for running the project under IIS Express
+  "iisSettings": {
+    "windowsAuthentication": false, // Disable Windows Authentication
+    "anonymousAuthentication": true, // Enable anonymous access
+    "iisExpress": {
+      "applicationUrl": "http://localhost:63386", // Base URL for IIS Express
+      "sslPort": 44302 // SSL port for HTTPS
+    }
+  },
+
+  // Profiles define different ways to launch the application
+  "profiles": {
+    // HTTP profile for local .NET CLI run
+    "http": {
+      "commandName": "Project", // Run the project directly
+      "dotnetRunMessages": true, // Show dotnet run messages
+      "launchBrowser": true, // Open browser automatically
+      "launchUrl": "swagger", // Default page to open
+      "applicationUrl": "http://localhost:5028", // Base URL for this profile
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development" // Environment
+      }
+    },
+
+    // HTTPS profile for local .NET CLI run with HTTPS
+    "https": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "https://localhost:7169;http://localhost:5028", // Both HTTPS and HTTP URLs
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+
+    // IIS Express profile
+    "IIS Express": {
+      "commandName": "IISExpress", // Run via IIS Express
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
