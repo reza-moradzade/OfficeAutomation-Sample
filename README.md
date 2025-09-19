@@ -39,4 +39,4 @@ This project is designed for **portfolio and learning purposes**, focusing on **
 
 ## 📝 Notes
 
-This project is for portfolio and learning purposes only, demonstrating separation of concerns, layered design, and hybrid integration (desktop + web via API + database).
+This project is **for portfolio and learning purposes only**, demonstrating **separation of concerns**, **layered design**, and **hybrid integration** (desktop + web via API + database).
