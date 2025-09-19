@@ -52,7 +52,7 @@ The main goal is to **demonstrate database structure design, security, auditing,
 
 ## 🛠️ Getting Started
 
-1. Execute the provided SQL script (`OfficeAutomationDB_Final.sql`) in **SQL Server Management Studio**  
+1. Execute the provided SQL script (`OfficeAutomationDB.sql`) in **SQL Server Management Studio**  
 2. Explore tables, indexes, and stored procedures to understand professional database structure  
 3. Test queries and sample operations to experience session management, auditing, and task handling  
 
