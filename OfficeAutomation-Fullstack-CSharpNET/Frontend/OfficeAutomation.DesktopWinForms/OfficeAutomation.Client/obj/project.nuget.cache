@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "KmNmxXi9+Uc=",
+  "success": true,
+  "projectFilePath": "C:\\Projects\\OfficeAutomation-Sample\\Src\\OfficeAutomation.DesktopWinForms\\OfficeAutomation.Client\\OfficeAutomation.Client.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Fujitsu\\.nuget\\packages\\system.io.pipelines\\9.0.9\\system.io.pipelines.9.0.9.nupkg.sha512",
+    "C:\\Users\\Fujitsu\\.nuget\\packages\\system.net.http.json\\9.0.9\\system.net.http.json.9.0.9.nupkg.sha512",
+    "C:\\Users\\Fujitsu\\.nuget\\packages\\system.text.encodings.web\\9.0.9\\system.text.encodings.web.9.0.9.nupkg.sha512",
+    "C:\\Users\\Fujitsu\\.nuget\\packages\\system.text.json\\9.0.9\\system.text.json.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
