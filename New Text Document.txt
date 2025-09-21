@@ -1,0 +1,8 @@
+cd C:\Projects\OfficeAutomation-Sample
+git add .
+git commit -m "Update #3"
+git push
+---------------
+tree /F /A
+-------------
+Bearer 

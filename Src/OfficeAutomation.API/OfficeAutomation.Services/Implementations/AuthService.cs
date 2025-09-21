@@ -4,6 +4,7 @@ using OfficeAutomation.Core.Entities.Security;
 using OfficeAutomation.Repositories.Interfaces;
 using OfficeAutomation.Services.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
+using System.Numerics;
 using System.Security.Claims;
 using System.Text;
 
@@ -68,14 +69,10 @@ namespace OfficeAutomation.Services.Implementations
 
                 return new AuthResultDto
                 {
-                    UserName = user.UserName,
-                    FullName = user.FullName ?? "",
-                    Token = "",
-                    RefreshToken = "",
-                    Expiration = DateTime.UtcNow,
-                    Roles = Array.Empty<string>(),
+                    message = $"Account locked after {maxFailedAttempts} failed login attempts. Please try again in {lockoutMinutes} minute(s).",
                     IsLocked = true,
-                    LockRemainingSeconds = lockoutMinutes * 60
+                    LockRemainingSeconds = lockoutMinutes * 60,
+                    failedLoginCount= maxFailedAttempts,
                 };
             }
 

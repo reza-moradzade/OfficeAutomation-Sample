@@ -1,0 +1,66 @@
+﻿<Window x:Class="OfficeAutomation.Login.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login" Height="350" Width="450"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+
+    <Grid Background="#FFF0F4F8" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <!-- برای ProgressBar -->
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <TextBlock Text="Office Automation Login" FontSize="24" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Foreground="#FF3498DB" Margin="0,0,0,20" Grid.Row="0"/>
+
+        <!-- Username -->
+        <Border Grid.Row="1" Height="35" CornerRadius="8" Background="White" BorderBrush="#FF3498DB" BorderThickness="1" Margin="0,0,0,10">
+            <TextBox x:Name="txtUsername" Background="Transparent" BorderThickness="0" Padding="10,0"
+                     VerticalContentAlignment="Center" FontSize="14"/>
+        </Border>
+
+        <!-- Password -->
+        <Border Grid.Row="2" Height="35" CornerRadius="8" Background="White" BorderBrush="#FF3498DB" BorderThickness="1" Margin="0,0,0,10">
+            <PasswordBox x:Name="txtPassword" Background="Transparent" BorderThickness="0" Padding="10,0"
+                         VerticalContentAlignment="Center" FontSize="14"/>
+        </Border>
+
+        <!-- Login Button -->
+        <Button x:Name="btnLogin" Grid.Row="3" Content="Login" Height="40" FontSize="16" FontWeight="Bold"
+                Background="#FF3498DB" Foreground="White" BorderThickness="0" Cursor="Hand" Margin="0,10,0,0"
+                Click="btnLogin_Click">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="8">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF5DADE2"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <!-- Progress Bar -->
+        <ProgressBar x:Name="progressLogin" Grid.Row="4" Height="10" Margin="0,10,0,0" 
+                     IsIndeterminate="True" Visibility="Collapsed"/>
+
+        <!-- Error Label -->
+        <Label x:Name="lblError" Grid.Row="5" Foreground="Red" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+    </Grid>
+</Window>

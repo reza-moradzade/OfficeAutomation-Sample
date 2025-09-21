@@ -21,7 +21,8 @@ public class AuthResultDto
 
     // Indicates if the account is temporarily locked due to failed login attempts
     public bool IsLocked { get; set; } = false;
-
+    public string message { get; set; } = null!;
     // Remaining lockout time in seconds if the account is locked
     public int LockRemainingSeconds { get; set; } = 0;
+    public int failedLoginCount { get; set; } = 0;
 }
