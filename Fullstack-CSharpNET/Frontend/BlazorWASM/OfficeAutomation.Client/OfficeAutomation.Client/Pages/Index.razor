@@ -1,0 +1,24 @@
+﻿@page "/"
+@inject NavigationManager Navigation
+
+<MudPaper Class="pa-6 mx-auto mt-12" Width="400px" Elevation="10">
+    <MudText Typo="Typo.h5" Align="Align.Center" Class="mb-4">ورود</MudText>
+
+    <MudTextField @bind-Value="Username" Label="Username" Variant="Variant.Outlined" FullWidth="true" />
+    <MudTextField @bind-Value="Password" Label="Password" Variant="Variant.Outlined" InputType="InputType.Password" FullWidth="true" />
+
+    <MudButton OnClick="OnLogin" Color="Color.Primary" Variant="Variant.Filled" Class="mt-4" FullWidth="true">
+        ورود
+    </MudButton>
+</MudPaper>
+
+@code {
+    private string Username { get; set; }
+    private string Password { get; set; }
+
+    private void OnLogin()
+    {
+        if (Username == "admin" && Password == "123")
+            Navigation.NavigateTo("/dashboard");
+    }
+}

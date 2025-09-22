@@ -1,0 +1,6 @@
+C:\Projects\OfficeAutomation-Sample\OfficeAutomation-Fullstack-CSharpNET\Frontend\OfficeAutomation.WebAssemblyBlazor\OfficeAutomation.Shared\bin\Debug\OfficeAutomation.Shared.dll
+C:\Projects\OfficeAutomation-Sample\OfficeAutomation-Fullstack-CSharpNET\Frontend\OfficeAutomation.WebAssemblyBlazor\OfficeAutomation.Shared\bin\Debug\OfficeAutomation.Shared.pdb
+C:\Projects\OfficeAutomation-Sample\OfficeAutomation-Fullstack-CSharpNET\Frontend\OfficeAutomation.WebAssemblyBlazor\OfficeAutomation.Shared\obj\Debug\OfficeAutomation.Shared.csproj.AssemblyReference.cache
+C:\Projects\OfficeAutomation-Sample\OfficeAutomation-Fullstack-CSharpNET\Frontend\OfficeAutomation.WebAssemblyBlazor\OfficeAutomation.Shared\obj\Debug\OfficeAutomation.Shared.csproj.CoreCompileInputs.cache
+C:\Projects\OfficeAutomation-Sample\OfficeAutomation-Fullstack-CSharpNET\Frontend\OfficeAutomation.WebAssemblyBlazor\OfficeAutomation.Shared\obj\Debug\OfficeAutomation.Shared.dll
+C:\Projects\OfficeAutomation-Sample\OfficeAutomation-Fullstack-CSharpNET\Frontend\OfficeAutomation.WebAssemblyBlazor\OfficeAutomation.Shared\obj\Debug\OfficeAutomation.Shared.pdb

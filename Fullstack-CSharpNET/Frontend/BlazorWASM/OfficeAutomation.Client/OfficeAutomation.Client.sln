@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36109.1 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeAutomation.Client", "OfficeAutomation.Client\OfficeAutomation.Client.csproj", "{12C746DD-E37A-494B-9DED-AC2565991BD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeAutomation.Shared", "..\OfficeAutomation.Shared\OfficeAutomation.Shared.csproj", "{B3ADDEA8-E7B5-44D9-B254-E6E35C2EB52F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12C746DD-E37A-494B-9DED-AC2565991BD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C746DD-E37A-494B-9DED-AC2565991BD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C746DD-E37A-494B-9DED-AC2565991BD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C746DD-E37A-494B-9DED-AC2565991BD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3ADDEA8-E7B5-44D9-B254-E6E35C2EB52F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3ADDEA8-E7B5-44D9-B254-E6E35C2EB52F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3ADDEA8-E7B5-44D9-B254-E6E35C2EB52F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3ADDEA8-E7B5-44D9-B254-E6E35C2EB52F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {84F4CFB2-1E03-4CD3-9056-17C86DF7ACFF}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,22 @@
+﻿@page "/cartable"
+@using OfficeAutomation.Shared.DTOs
+
+<MudText Typo="Typo.h4">کارتابل</MudText>
+<MudTable Items="cartItems">
+    <HeaderContent>
+        <MudTh>عنوان</MudTh>
+        <MudTh>ارسال کننده</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd>@context.Title</MudTd>
+        <MudTd>@context.Sender</MudTd>
+    </RowTemplate>
+</MudTable>
+
+@code {
+    private List<CartableItemDto> cartItems = new()
+    {
+        new CartableItemDto { Title = "نامه 1", Sender = "علی" },
+        new CartableItemDto { Title = "درخواست 2", Sender = "مرضیه" }
+    };
+}

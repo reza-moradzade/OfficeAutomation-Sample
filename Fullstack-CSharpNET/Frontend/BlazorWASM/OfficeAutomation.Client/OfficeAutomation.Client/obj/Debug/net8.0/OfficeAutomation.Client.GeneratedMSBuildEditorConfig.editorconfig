@@ -1,0 +1,68 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.MudDebugAnalyzer = 
+build_property.MudAllowedAttributePattern = 
+build_property.MudAllowedAttributeList = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = OfficeAutomation.Client
+build_property.RootNamespace = OfficeAutomation.Client
+build_property.ProjectDir = C:\Projects\OfficeAutomation-Sample\OfficeAutomation-Fullstack-CSharpNET\Frontend\OfficeAutomation.WebAssemblyBlazor\OfficeAutomation.Client\OfficeAutomation.Client\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Projects\OfficeAutomation-Sample\OfficeAutomation-Fullstack-CSharpNET\Frontend\OfficeAutomation.WebAssemblyBlazor\OfficeAutomation.Client\OfficeAutomation.Client
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Projects/OfficeAutomation-Sample/OfficeAutomation-Fullstack-CSharpNET/Frontend/OfficeAutomation.WebAssemblyBlazor/OfficeAutomation.Client/OfficeAutomation.Client/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/OfficeAutomation-Sample/OfficeAutomation-Fullstack-CSharpNET/Frontend/OfficeAutomation.WebAssemblyBlazor/OfficeAutomation.Client/OfficeAutomation.Client/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/OfficeAutomation-Sample/OfficeAutomation-Fullstack-CSharpNET/Frontend/OfficeAutomation.WebAssemblyBlazor/OfficeAutomation.Client/OfficeAutomation.Client/Pages/Cartable.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydGFibGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/OfficeAutomation-Sample/OfficeAutomation-Fullstack-CSharpNET/Frontend/OfficeAutomation.WebAssemblyBlazor/OfficeAutomation.Client/OfficeAutomation.Client/Pages/Dashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/OfficeAutomation-Sample/OfficeAutomation-Fullstack-CSharpNET/Frontend/OfficeAutomation.WebAssemblyBlazor/OfficeAutomation.Client/OfficeAutomation.Client/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/OfficeAutomation-Sample/OfficeAutomation-Fullstack-CSharpNET/Frontend/OfficeAutomation.WebAssemblyBlazor/OfficeAutomation.Client/OfficeAutomation.Client/Shared/Footer.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEZvb3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/OfficeAutomation-Sample/OfficeAutomation-Fullstack-CSharpNET/Frontend/OfficeAutomation.WebAssemblyBlazor/OfficeAutomation.Client/OfficeAutomation.Client/Shared/Header.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEhlYWRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/OfficeAutomation-Sample/OfficeAutomation-Fullstack-CSharpNET/Frontend/OfficeAutomation.WebAssemblyBlazor/OfficeAutomation.Client/OfficeAutomation.Client/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/OfficeAutomation-Sample/OfficeAutomation-Fullstack-CSharpNET/Frontend/OfficeAutomation.WebAssemblyBlazor/OfficeAutomation.Client/OfficeAutomation.Client/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projects/OfficeAutomation-Sample/OfficeAutomation-Fullstack-CSharpNET/Frontend/OfficeAutomation.WebAssemblyBlazor/OfficeAutomation.Client/OfficeAutomation.Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
