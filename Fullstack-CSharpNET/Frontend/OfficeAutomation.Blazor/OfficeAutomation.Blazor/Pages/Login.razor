@@ -1,0 +1,52 @@
+﻿@page "/login"
+@layout EmptyLayout
+@inject NavigationManager NavigationManager
+@inject IAuthService AuthService
+@inject AuthState AuthState
+
+<h3>صفحه ورود</h3>
+
+<div class="login-form">
+    <input placeholder="نام کاربری" @bind="Username" />
+    <input type="password" placeholder="رمز عبور" @bind="Password" />
+    <button @onclick="LoginAsync">ورود</button>
+</div>
+
+@if (!string.IsNullOrEmpty(ErrorMessage))
+{
+    <p style="color:red">@ErrorMessage</p>
+}
+
+@code {
+    private string Username = string.Empty;
+    private string Password = string.Empty;
+    private string ErrorMessage = string.Empty;
+
+    private async Task LoginAsync()
+    {
+        ErrorMessage = string.Empty;
+
+        try
+        {
+            var result = await AuthService.LoginAsync(Username, Password);
+            if (result != null)
+            {
+                AuthState.IsAuthenticated = true;
+                AuthState.Token = result.Token;
+                AuthState.UserName = result.UserName;
+                AuthState.FullName = result.FullName;
+   
+                NavigationManager.NavigateTo("/home"); 
+                // NavigationManager.NavigateTo("/cartable");
+            }
+            else
+            {
+                ErrorMessage = "نام کاربری یا رمز عبور اشتباه است.";
+            }
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"خطا در ورود: {ex.Message}";
+        }
+    }
+}

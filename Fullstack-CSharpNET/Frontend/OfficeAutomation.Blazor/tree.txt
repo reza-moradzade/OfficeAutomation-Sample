@@ -1,0 +1,47 @@
+\---OfficeAutomation.Blazor
+    |   App.razor
+    |   Program.cs
+    |   _Imports.razor
+    +---Layout
+    |       EmptyLayout.razor
+    |       MainLayout.razor
+    |       
+    +---Models
+    |       AuthResponse.cs
+    |       CartableItemDto.cs
+    |       CartableResponse.cs
+    |       
+    +---Pages
+    |       Cartable.razor
+    |       Home.razor
+    |       Index.razor
+    |       Login.razor
+    |       
+    +---Properties
+    |       launchSettings.json
+    |       
+    +---Services
+    |   |   AuthService.cs
+    |   |   AuthState.cs
+    |   |   TokenService.cs
+    |   |   
+    |   +---Implementations
+    |   |       CartableService.cs
+    |   |       
+    |   \---Interfaces
+    |           IAuthService.cs
+    |           
+    +---Shared
+    |       AppLayout.razor
+    |       
+    \---wwwroot
+        |   icon-192.png
+        |   icon-512.png
+        |   index.html
+        |   manifest.webmanifest
+        |   service-worker.js
+        |   service-worker.published.js
+        |   
+        \---css
+                app.css
+                

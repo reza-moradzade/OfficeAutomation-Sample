@@ -1,0 +1,60 @@
+﻿@page "/cartable"
+@using OfficeAutomation.Blazor.Models
+@using OfficeAutomation.Blazor.Services
+@inject ICartableService CartableService
+@inject AuthState AuthState
+@inject NavigationManager NavigationManager
+
+<h3>کارتابل من</h3>
+
+@if (!AuthState.IsAuthenticated)
+{
+    <p>لطفاً ابتدا وارد شوید.</p>
+}
+else if (Items == null)
+{
+    <p>در حال بارگذاری...</p>
+}
+else if (Items.Count == 0)
+{
+    <p>آیتمی برای نمایش وجود ندارد.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>عنوان</th>
+                <th>توضیحات</th>
+                <th>وضعیت</th>
+                <th>تاریخ دریافت</th>
+                <th>مسئول</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Items)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Description</td>
+                    <td>@item.Status</td>
+                    <td>@item.ReceivedAt.ToLocalTime()</td>
+                    <td>@item.AssignedToFullName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<CartableItemDto>? Items;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (AuthState.IsAuthenticated)
+        {
+            Items = await CartableService.GetCartableItemsAsync();
+        }
+        // اگر کاربر لاگین نکرده باشد، فقط پیغام نمایش داده می‌شود
+    }
+}

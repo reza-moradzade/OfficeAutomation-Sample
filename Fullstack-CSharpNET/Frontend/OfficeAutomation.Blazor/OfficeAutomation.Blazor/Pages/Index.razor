@@ -1,0 +1,11 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+@layout EmptyLayout
+
+@code {
+    protected override void OnInitialized()
+    {
+        // هدایت مستقیم به صفحه Login
+        NavigationManager.NavigateTo("/login", true);
+    }
+}
