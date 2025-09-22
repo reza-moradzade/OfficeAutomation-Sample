@@ -1,6 +1,14 @@
 self.assetsManifest = {
-  "version": "9UAZjSq/",
+  "version": "w6sEE950",
   "assets": [
+    {
+      "hash": "sha256-3FM/mjas9rQiq2CY+FQPy1Pe1iCLSx/qZltQxK4dcuQ=",
+      "url": "_content/MudBlazor/MudBlazor.min.css"
+    },
+    {
+      "hash": "sha256-Qf9/gSPxTxchB08Wi5WXxjPqw2IQvnyVUW27s7cwoUo=",
+      "url": "_content/MudBlazor/MudBlazor.min.js"
+    },
     {
       "hash": "sha256-zTuWa2CVqwM2Q09thU8aUhwBsDc4aYCBgaEea1uGnYY=",
       "url": "_framework/Microsoft.AspNetCore.Authorization.wasm"
@@ -70,6 +78,14 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.Extensions.FileSystemGlobbing.wasm"
     },
     {
+      "hash": "sha256-MCtPiXisbWKIOH+e6zIqwxOQ3vRtXTLAlD3HWy0d9Kk=",
+      "url": "_framework/Microsoft.Extensions.Localization.Abstractions.wasm"
+    },
+    {
+      "hash": "sha256-gf7Gi0NrGBJ05OsJrNCezrrLR1lLHxQPEO4Plbto4jA=",
+      "url": "_framework/Microsoft.Extensions.Localization.wasm"
+    },
+    {
       "hash": "sha256-uf1KJp0fVm0d3Bs2JFD1oxo857dVH+MA9AF/tlH5YEw=",
       "url": "_framework/Microsoft.Extensions.Logging.Abstractions.wasm"
     },
@@ -110,11 +126,15 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.Win32.Registry.wasm"
     },
     {
-      "hash": "sha256-s3MkJkPjh5Ec98A8vGAMC6QNzE4mIrHjfoXVu/QzCcU=",
+      "hash": "sha256-mymvViGvh3Okgzohs/Oo4vZ6CfTXr/lbzmx5WuvSszY=",
+      "url": "_framework/MudBlazor.wasm"
+    },
+    {
+      "hash": "sha256-iNpibYlKJBiOt3Ze46aTXc5LMaKJtxqvLPLXuKW7pXk=",
       "url": "_framework/OfficeAutomation.Blazor.pdb"
     },
     {
-      "hash": "sha256-8TZq2euV8GoEIDgyc8x5ZHiKcO3K+fFFMcqbxNW5p7U=",
+      "hash": "sha256-qhCy5Ed8vPjAM/YSNJ/hzZzqArLBV7XtVT8CfB9ZDDI=",
       "url": "_framework/OfficeAutomation.Blazor.wasm"
     },
     {
@@ -766,7 +786,7 @@ self.assetsManifest = {
       "url": "_framework/WindowsBase.wasm"
     },
     {
-      "hash": "sha256-lr1TiDJHnsj/uwssta0vVlBbe6lzJzp48cL8WVirRLY=",
+      "hash": "sha256-U/Jq1IwOsq+zP0r/55CR2+IE9ceFoP6wF7ADLTAuygg=",
       "url": "_framework/blazor.boot.json"
     },
     {
@@ -834,7 +854,7 @@ self.assetsManifest = {
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-gvYlkd56lsldOo7K2X3NZFjaBd9JpZxfgylcNCisj9s=",
+      "hash": "sha256-5o0mw72cSy5VdoGccEI5xlQjehinaUHASIUAkEW0bBs=",
       "url": "index.html"
     },
     {

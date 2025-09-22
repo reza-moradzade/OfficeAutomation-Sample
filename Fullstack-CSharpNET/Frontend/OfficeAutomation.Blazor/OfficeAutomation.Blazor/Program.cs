@@ -1,8 +1,9 @@
-﻿using OfficeAutomation.Blazor;
-using OfficeAutomation.Blazor.Services;
-using Microsoft.AspNetCore.Components.Web;
+﻿using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using MudBlazor.Services;
 using OfficeAutomation.Blazor;
+using OfficeAutomation.Blazor;
+using OfficeAutomation.Blazor.Services;
 using OfficeAutomation.Blazor.Services;
 using OfficeAutomation.Blazor.Services.Interfaces;
 using System.Net.Http;
@@ -27,5 +28,5 @@ builder.Services.AddSingleton<AuthState>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ICartableService, CartableService>();
-
+builder.Services.AddMudServices();
 await builder.Build().RunAsync();

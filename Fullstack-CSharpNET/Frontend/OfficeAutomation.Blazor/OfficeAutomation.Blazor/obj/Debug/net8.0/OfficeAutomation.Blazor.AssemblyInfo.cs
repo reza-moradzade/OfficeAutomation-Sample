@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OfficeAutomation.Blazor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99029a418e9a866c605f6f7720946cba5e4b7889")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0369d0f644bb878db740488e5f4a95e924834b7")]
 [assembly: System.Reflection.AssemblyProductAttribute("OfficeAutomation.Blazor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OfficeAutomation.Blazor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

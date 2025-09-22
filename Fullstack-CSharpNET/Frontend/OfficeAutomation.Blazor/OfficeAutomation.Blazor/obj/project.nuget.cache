@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4JAn7WbGOpc=",
+  "dgSpecHash": "XCiPMPAO7ks=",
   "success": true,
   "projectFilePath": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,8 @@
     "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\8.0.0\\microsoft.extensions.fileproviders.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\8.0.0\\microsoft.extensions.fileproviders.physical.8.0.0.nupkg.sha512",
     "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\8.0.0\\microsoft.extensions.filesystemglobbing.8.0.0.nupkg.sha512",
+    "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.extensions.localization\\8.0.12\\microsoft.extensions.localization.8.0.12.nupkg.sha512",
+    "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\8.0.12\\microsoft.extensions.localization.abstractions.8.0.12.nupkg.sha512",
     "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.extensions.logging\\8.0.1\\microsoft.extensions.logging.8.0.1.nupkg.sha512",
     "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.3\\microsoft.extensions.logging.abstractions.8.0.3.nupkg.sha512",
     "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
@@ -30,6 +32,7 @@
     "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.jsinterop.webassembly\\8.0.16\\microsoft.jsinterop.webassembly.8.0.16.nupkg.sha512",
     "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.16\\microsoft.net.illink.tasks.8.0.16.nupkg.sha512",
     "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\9.0.5\\microsoft.net.sdk.webassembly.pack.9.0.5.nupkg.sha512",
+    "C:\\Users\\Fujitsu\\.nuget\\packages\\mudblazor\\8.12.0\\mudblazor.8.12.0.nupkg.sha512",
     "C:\\Users\\Fujitsu\\.nuget\\packages\\system.io.pipelines\\8.0.0\\system.io.pipelines.8.0.0.nupkg.sha512",
     "C:\\Users\\Fujitsu\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.20\\microsoft.netcore.app.runtime.mono.browser-wasm.8.0.20.nupkg.sha512"
   ],

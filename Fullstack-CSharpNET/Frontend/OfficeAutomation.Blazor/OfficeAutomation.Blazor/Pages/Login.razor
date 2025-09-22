@@ -3,28 +3,71 @@
 @inject NavigationManager NavigationManager
 @inject IAuthService AuthService
 @inject AuthState AuthState
+@using MudBlazor
 
-<h3>صفحه ورود</h3>
+<style>
+    .industrial-login-card {
+        background: linear-gradient(145deg, #1e3c72, #2a5298); /* آبی صنعتی */
+        color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
 
-<div class="login-form">
-    <input placeholder="نام کاربری" @bind="Username" />
-    <input type="password" placeholder="رمز عبور" @bind="Password" />
-    <button @onclick="LoginAsync">ورود</button>
-</div>
+        .industrial-login-card .mud-input-root input {
+            color: #000; /* متن داخل فیلد */
+            background-color: #e0f0ff; /* زمینه فیلد آبی روشن */
+            border-radius: 5px;
+        }
 
-@if (!string.IsNullOrEmpty(ErrorMessage))
-{
-    <p style="color:red">@ErrorMessage</p>
-}
+        .industrial-login-card .mud-button-root {
+            background-color: #0056b3;
+            color: white;
+        }
+
+            .industrial-login-card .mud-button-root:hover {
+                background-color: #003f7f;
+            }
+</style>
+
+<MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-center align-center" Style="height:100vh;">
+    <MudCard Class="industrial-login-card" Style="width:100%; max-width:400px;">
+        <MudCardContent>
+            <MudText Typo="Typo.h5" Align="Align.Center" Class="mb-4">Login</MudText>
+
+            <MudTextField @bind-Value="Username" Label="Username" Variant="@Variant.Filled" Required="true" Class="mb-3" />
+            <MudTextField @bind-Value="Password" Label="Password" Variant="@Variant.Filled" InputType="InputType.Password" Required="true" Class="mb-3" />
+
+            @if (!string.IsNullOrEmpty(ErrorMessage))
+            {
+                <MudText Color="Color.Error" Class="mb-3">@ErrorMessage</MudText>
+            }
+
+            <MudButton Variant="@Variant.Filled" Color="@Color.Primary" FullWidth="true" Disabled="@isLoading" @onclick="LoginAsync">
+                @if (isLoading)
+                {
+                    <MudProgressCircular Size="@Size.Small" Color="Color.Inherit" Class="mr-2" />
+                    <span>Logging in...</span>
+                }
+                else
+                {
+                    <span>Login</span>
+                }
+            </MudButton>
+        </MudCardContent>
+    </MudCard>
+</MudContainer>
 
 @code {
     private string Username = string.Empty;
     private string Password = string.Empty;
     private string ErrorMessage = string.Empty;
+    private bool isLoading = false;
 
     private async Task LoginAsync()
     {
         ErrorMessage = string.Empty;
+        isLoading = true;
 
         try
         {
@@ -35,18 +78,21 @@
                 AuthState.Token = result.Token;
                 AuthState.UserName = result.UserName;
                 AuthState.FullName = result.FullName;
-   
-                NavigationManager.NavigateTo("/home"); 
-                // NavigationManager.NavigateTo("/cartable");
+
+                NavigationManager.NavigateTo("/home");
             }
             else
             {
-                ErrorMessage = "نام کاربری یا رمز عبور اشتباه است.";
+                ErrorMessage = "Invalid username or password.";
             }
         }
         catch (Exception ex)
         {
-            ErrorMessage = $"خطا در ورود: {ex.Message}";
+            ErrorMessage = $"Login error: {ex.Message}";
+        }
+        finally
+        {
+            isLoading = false;
         }
     }
 }
