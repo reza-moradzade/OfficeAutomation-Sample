@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
 using OfficeAutomation.Blazor;
+using OfficeAutomation.Blazor.Components;
 using OfficeAutomation.Blazor.Services;
 using IAuthService = OfficeAutomation.Blazor.Services.IAuthService;
 

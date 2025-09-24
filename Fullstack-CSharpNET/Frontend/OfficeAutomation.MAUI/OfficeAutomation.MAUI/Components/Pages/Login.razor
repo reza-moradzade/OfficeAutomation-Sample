@@ -1,0 +1,146 @@
+﻿@page "/login"
+@using System.ComponentModel.DataAnnotations
+@layout EmptyLayout
+@inject NavigationManager NavigationManager
+@inject IAuthService AuthService
+@inject AuthState AuthState
+
+<style>
+    /* Industrial-style login card */
+    .industrial-login-card {
+        background: linear-gradient(145deg, #1e3c72, #2a5298);
+        color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        max-width: 400px;
+        width: 100%;
+    }
+
+        /* Input styling */
+        .industrial-login-card input {
+            color: #000;
+            background-color: #e0f0ff;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 0.5rem;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+            .industrial-login-card input:focus {
+                outline: none;
+                border-color: #0056b3;
+                box-shadow: 0 0 5px rgba(0,86,179,0.5);
+            }
+
+        /* Button styling */
+        .industrial-login-card button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem;
+            width: 100%;
+            cursor: pointer;
+        }
+
+            .industrial-login-card button:hover {
+                background-color: #003f7f;
+            }
+
+        .industrial-login-card .error-message {
+            color: #ff4d4f;
+            margin-bottom: 1rem;
+        }
+
+    .vh-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f2f5;
+    }
+</style>
+
+<div class="vh-center">
+    <div class="industrial-login-card">
+        <h3 class="text-center mb-4">Login</h3>
+
+        <EditForm Model="@loginModel" OnValidSubmit="LoginAsync">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <InputText @bind-Value="loginModel.Username" placeholder="Username" />
+            <InputText @bind-Value="loginModel.Password" type="password" placeholder="Password" />
+
+            @if (!string.IsNullOrEmpty(ErrorMessage))
+            {
+                <div class="error-message">@ErrorMessage</div>
+            }
+
+            <button type="submit" disabled="@isLoading">
+                @if (isLoading)
+                {
+                    <span>Logging in...</span>
+                }
+                else
+                {
+                    <span>Login</span>
+                }
+            </button>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private LoginModel loginModel = new();
+    private string ErrorMessage = string.Empty;
+    private bool isLoading = false;
+
+    private async Task LoginAsync()
+    {
+        ErrorMessage = string.Empty;
+        isLoading = true;
+
+        try
+        {
+            var result = await AuthService.LoginAsync(loginModel.Username, loginModel.Password);
+
+            if (result?.Token != null)
+            {
+                AuthState.IsAuthenticated = true;
+                AuthState.Token = result.Token;
+                AuthState.UserName = result.UserName;
+                AuthState.FullName = result.FullName;
+
+                NavigationManager.NavigateTo("/home");
+            }
+            else
+            {
+                ErrorMessage = "Invalid username or password.";
+            }
+        }
+        catch (HttpRequestException httpEx)
+        {
+            ErrorMessage = $"Network error: {httpEx.Message}";
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Login error: {ex.Message}";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    public class LoginModel
+    {
+        [Required]
+        public string Username { get; set; } = string.Empty;
+
+        [Required]
+        public string Password { get; set; } = string.Empty;
+    }
+}

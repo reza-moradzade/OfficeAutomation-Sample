@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "OfficeAutomation.Blazor",
   "resources": {
-    "hash": "sha256-XfLel3Mnbs1uyjlp5/l9w58E4VtZl7gHgVpVmfcMKUY=",
+    "hash": "sha256-STCT5PJAL7nJH918Re1p7Hw7b8Nwn4byjmvaH9dIBjY=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-D0bzod5lwwSzPR43JC8TTCcZKw+3jIHOk8CZFCRj5is="
     },
@@ -212,10 +212,10 @@
       "mscorlib.wasm": "sha256-8qWtIcy8fV43tlcx4DxsF45RlkcfK6588vVoxF7be2E=",
       "netstandard.wasm": "sha256-eOgz2RiO4YaPLOMIGgVLNrcfsQhmLQJzR0N7Pu2teXc=",
       "System.Private.CoreLib.wasm": "sha256-F8T63QCIbMPXPQPqTcuyBAw+oVvZSrWjy88j7fiJQZ4=",
-      "OfficeAutomation.Blazor.wasm": "sha256-nG17IOQAfHZP2JgTwZE90X8hCHvHasir/GudNK2b4lY="
+      "OfficeAutomation.Blazor.wasm": "sha256-pP5vZuwrw/2SUaot9qFOR1m5dHkMhWJDIyVDMb4rdTY="
     },
     "pdb": {
-      "OfficeAutomation.Blazor.pdb": "sha256-YoYpEPV/P/64JXtqWQkJhDwNwSnATHhHpz2gAHoZmGs="
+      "OfficeAutomation.Blazor.pdb": "sha256-f0r63dIf9y8BTXWJoyEzRXeTpPZ0XTap0ai2uCXba14="
     }
   },
   "cacheBootResources": true,

@@ -1,0 +1,27 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build
+bin/
+obj/
+publish/
+
+# Rider
+.idea/
+
+# MAUI
+*.apk
+*.aab
+
+# Blazor
+wwwroot/_framework/
+**/obj/
+**/bin/
+
+# Copilot/VS caches
+**/CopilotIndices/
+**/DesignTimeBuild/

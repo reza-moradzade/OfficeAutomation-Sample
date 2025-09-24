@@ -1,0 +1,63 @@
+﻿@page "/cartable"
+@using OfficeAutomation.MAUI.Models
+@using OfficeAutomation.MAUI.Services
+@inject ICartableService CartableService   // Service to fetch cartable items
+@inject AuthState AuthState                // Tracks authentication state
+@inject NavigationManager NavigationManager
+
+<h3>My Cartable</h3>
+
+@if (!AuthState.IsAuthenticated)
+{
+    <p>Please log in first.</p>
+}
+else if (Items == null)
+{
+    <p>Loading...</p>
+}
+else if (Items.Count == 0)
+{
+    <p>No items to display.</p>
+}
+else
+{
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Received At</th>
+            <th>Assigned To</th>
+            <th>Read</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Items)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.Status</td>
+                <td>@item.ReceivedAt.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@(item.AssignedToFullName ?? "-")</td>
+                <td>@(item.IsRead ? "✔" : "✖")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+}
+
+@code {
+    private List<CartableItemDto>? Items;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (AuthState.IsAuthenticated)
+        {
+            // Fetch cartable items if the user is authenticated
+            Items = await CartableService.GetCartableItemsAsync();
+        }
+        // If not authenticated, only the login prompt is shown
+    }
+}

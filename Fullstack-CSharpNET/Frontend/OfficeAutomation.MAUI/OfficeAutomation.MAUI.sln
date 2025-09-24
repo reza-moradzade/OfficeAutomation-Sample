@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36109.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeAutomation.MAUI", "OfficeAutomation.MAUI\OfficeAutomation.MAUI.csproj", "{A8796224-7273-466F-A0E1-463C9FB64FC5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8796224-7273-466F-A0E1-463C9FB64FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8796224-7273-466F-A0E1-463C9FB64FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8796224-7273-466F-A0E1-463C9FB64FC5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{A8796224-7273-466F-A0E1-463C9FB64FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8796224-7273-466F-A0E1-463C9FB64FC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8796224-7273-466F-A0E1-463C9FB64FC5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC835BD1-5F49-4A60-9D29-2C518F8196E1}
+	EndGlobalSection
+EndGlobal
