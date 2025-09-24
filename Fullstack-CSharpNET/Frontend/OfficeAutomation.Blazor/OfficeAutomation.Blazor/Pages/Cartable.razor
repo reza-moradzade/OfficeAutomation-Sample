@@ -1,34 +1,34 @@
 ﻿@page "/cartable"
 @using OfficeAutomation.Blazor.Models
 @using OfficeAutomation.Blazor.Services
-@inject ICartableService CartableService
-@inject AuthState AuthState
+@inject ICartableService CartableService   // Service to fetch cartable items
+@inject AuthState AuthState                // Tracks authentication state
 @inject NavigationManager NavigationManager
 
-<h3>کارتابل من</h3>
+<h3>My Cartable</h3>
 
 @if (!AuthState.IsAuthenticated)
 {
-    <p>لطفاً ابتدا وارد شوید.</p>
+    <p>Please log in first.</p>
 }
 else if (Items == null)
 {
-    <p>در حال بارگذاری...</p>
+    <p>Loading...</p>
 }
 else if (Items.Count == 0)
 {
-    <p>آیتمی برای نمایش وجود ندارد.</p>
+    <p>No items to display.</p>
 }
 else
 {
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>عنوان</th>
-                <th>توضیحات</th>
-                <th>وضعیت</th>
-                <th>تاریخ دریافت</th>
-                <th>مسئول</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Received At</th>
+                <th>Assigned To</th>
             </tr>
         </thead>
         <tbody>
@@ -53,8 +53,9 @@ else
     {
         if (AuthState.IsAuthenticated)
         {
+            // Fetch cartable items if the user is authenticated
             Items = await CartableService.GetCartableItemsAsync();
         }
-        // اگر کاربر لاگین نکرده باشد، فقط پیغام نمایش داده می‌شود
+        // If not authenticated, only the login prompt is shown
     }
 }

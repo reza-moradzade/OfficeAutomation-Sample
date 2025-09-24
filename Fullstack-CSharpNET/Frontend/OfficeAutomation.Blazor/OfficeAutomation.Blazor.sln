@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36109.1 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeAutomation.Blazor", "OfficeAutomation.Blazor\OfficeAutomation.Blazor.csproj", "{B26D5D47-9066-4C43-864B-55D580F1D479}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeAutomation.Blazor", "OfficeAutomation.Blazor\OfficeAutomation.Blazor.csproj", "{C12C94BE-EB76-45DD-A46C-83ED180591FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B26D5D47-9066-4C43-864B-55D580F1D479}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B26D5D47-9066-4C43-864B-55D580F1D479}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B26D5D47-9066-4C43-864B-55D580F1D479}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B26D5D47-9066-4C43-864B-55D580F1D479}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C12C94BE-EB76-45DD-A46C-83ED180591FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C12C94BE-EB76-45DD-A46C-83ED180591FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C12C94BE-EB76-45DD-A46C-83ED180591FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C12C94BE-EB76-45DD-A46C-83ED180591FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CF1C79AA-86B1-4B92-B2E0-9FD4A1FB2919}
+		SolutionGuid = {5D94FA15-5A50-4FCD-A0F6-5CE9DB600E08}
 	EndGlobalSection
 EndGlobal

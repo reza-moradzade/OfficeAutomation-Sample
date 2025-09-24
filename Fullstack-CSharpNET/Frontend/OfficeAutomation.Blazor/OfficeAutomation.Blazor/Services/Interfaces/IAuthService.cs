@@ -1,12 +1,14 @@
-﻿using System.Threading.Tasks;
-using OfficeAutomation.Blazor.Models;
+﻿using OfficeAutomation.Blazor.Models;
 
 namespace OfficeAutomation.Blazor.Services.Interfaces
 {
+    // Defines authentication operations for the application
     public interface IAuthService
     {
-     Task<AuthResponse?> LoginAsync(string username, string password);
-        Task LogoutAsync();
+        // Performs user login and returns authentication response
+        Task<AuthResponse?> LoginAsync(string username, string password);
 
+        // Performs user logout
+        Task LogoutAsync();
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OfficeAutomation.WinForms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea9f70d3f19a0a0aa92f6580219a6a7dee212d4a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5d86412c463033a75af2590c829752f1b4c3a05")]
 [assembly: System.Reflection.AssemblyProductAttribute("OfficeAutomation.WinForms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OfficeAutomation.WinForms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,10 +1,13 @@
 ﻿@inherits LayoutComponentBase
-@inject AuthState AuthState
-@inject NavigationManager Navigation
-@inject IAuthService AuthService
+@inject AuthState AuthState                   // Tracks authentication state
+@inject NavigationManager Navigation         // For page navigation
+@inject IAuthService AuthService             // Handles login/logout operations
 
 <div class="app-container">
+    <!-- Main layout with logout callback -->
     <MainLayout OnLogout="HandleLogout" />
+
+    <!-- Page content rendered here -->
     <div class="main-content">
         @Body
     </div>
@@ -13,23 +16,25 @@
 @code {
     private async Task HandleLogout()
     {
-        // 1️⃣ پاک کردن توکن و Authorization Header
+        // 1️⃣ Clear token and authorization header
         await AuthService.LogoutAsync();
 
-        // 2️⃣ به‌روزرسانی AuthState
+        // 2️⃣ Update authentication state
         AuthState.IsAuthenticated = false;
 
-        // 3️⃣ هدایت به Login
+        // 3️⃣ Redirect user to login page
         Navigation.NavigateTo("/login", true);
     }
 }
 
 <style>
+    /* Layout container */
     .app-container {
         display: flex;
         min-height: 100vh;
     }
 
+    /* Main content area */
     .main-content {
         flex: 1;
         padding: 20px;

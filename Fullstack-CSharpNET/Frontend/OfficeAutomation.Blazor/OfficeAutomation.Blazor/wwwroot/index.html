@@ -6,18 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OfficeAutomation.Blazor</title>
     <base href="/" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
-    <!-- If you add any scoped CSS files, uncomment the following to load them
-    <link href="OfficeAutomation.Blazor.styles.css" rel="stylesheet" /> -->
-    <link href="manifest.webmanifest" rel="manifest" />
-    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+    <link href="OfficeAutomation.Blazor.styles.css" rel="stylesheet" />
     <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
 
+    <!-- Favicon and app icons -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+    <link href="manifest.webmanifest" rel="manifest" />
 </head>
 
 <body>
+    <!-- Blazor app root -->
     <div id="app">
+        <!-- Loading animation while Blazor initializes -->
         <svg class="loading-progress">
             <circle r="40%" cx="50%" cy="50%" />
             <circle r="40%" cx="50%" cy="50%" />
@@ -25,13 +31,22 @@
         <div class="loading-progress-text"></div>
     </div>
 
+    <!-- Error UI displayed if Blazor encounters an unhandled exception -->
     <div id="blazor-error-ui">
         An unhandled error has occurred.
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
+
+    <!-- Blazor WebAssembly script -->
     <script src="_framework/blazor.webassembly.js"></script>
-    <script>navigator.serviceWorker.register('service-worker.js');</script>
+
+    <!-- Register service worker for PWA support -->
+    <script>
+        navigator.serviceWorker.register('service-worker.js');
+    </script>
+
+    <!-- MudBlazor JavaScript for interactive components -->
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
 </body>
 

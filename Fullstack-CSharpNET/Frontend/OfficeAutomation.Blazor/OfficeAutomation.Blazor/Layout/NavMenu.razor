@@ -1,0 +1,50 @@
+﻿@* Top navbar is commented out and can be used if needed *@
+@* 
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">OfficeAutomation.Blazor</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div> 
+*@
+
+<!-- Side navigation menu -->
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <!-- Home link -->
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="home">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+
+        <!-- Cartable link -->
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="cartable">
+                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Cartable
+            </NavLink>
+        </div>
+
+        <!-- Logout link -->
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="#" onclick="Logout">
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Logout
+            </NavLink>
+        </div>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true; // Determines if nav menu is collapsed
+
+    // Returns CSS class based on collapse state
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    // Toggles the navigation menu open/close
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

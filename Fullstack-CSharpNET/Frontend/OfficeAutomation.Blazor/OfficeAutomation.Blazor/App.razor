@@ -1,10 +1,19 @@
-﻿<Router AppAssembly="@typeof(Program).Assembly">
+﻿<Router AppAssembly="@typeof(App).Assembly">
+    <!-- Rendered when a matching route is found -->
     <Found Context="routeData">
+        <!-- Displays the component for the current route using the default layout -->
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+
+        <!-- Automatically sets focus on the first <h1> element when navigating -->
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
+
+    <!-- Rendered when no matching route is found -->
     <NotFound>
+        <PageTitle>Not Found</PageTitle>
         <LayoutView Layout="@typeof(MainLayout)">
-            <p>صفحه مورد نظر پیدا نشد!</p>
+            <!-- User-friendly message for invalid routes -->
+            <p role="alert">Sorry, there is nothing at this address.</p>
         </LayoutView>
     </NotFound>
 </Router>

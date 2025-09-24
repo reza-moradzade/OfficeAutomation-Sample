@@ -2,15 +2,16 @@
 
 namespace OfficeAutomation.Blazor.Models
 {
+    // Represents a response item in the cartable system
     public class CartableResponse
     {
-        public int CartableId { get; set; }
-        public int TaskId { get; set; }
-        public string Title { get; set; } = string.Empty;
-        public string? Description { get; set; }
-        public string Status { get; set; } = string.Empty;
-        public DateTime? DueDate { get; set; }
-        public bool IsRead { get; set; }
-        public DateTime ReceivedAt { get; set; }
+        public int CartableId { get; set; }          // Unique ID of the cartable item
+        public int TaskId { get; set; }              // Related task ID
+        public string Title { get; set; } = string.Empty;   // Title of the cartable item
+        public string? Description { get; set; }            // Optional description
+        public string Status { get; set; } = string.Empty;  // Current status (e.g., Pending, Completed)
+        public DateTime? DueDate { get; set; }             // Optional due date
+        public bool IsRead { get; set; }                   // Indicates whether the item has been read
+        public DateTime ReceivedAt { get; set; }           // Date and time the item was received
     }
 }

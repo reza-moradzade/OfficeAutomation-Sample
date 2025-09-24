@@ -1,33 +1,20 @@
 ﻿@inherits LayoutComponentBase
-@inject NavigationManager NavigationManager
 
-<div class="layout">
-    @if (!IsLoginPage)
-    {
-        <nav class="sidebar">
-            <ul>
-                <li><a href="/home">صفحه اصلی</a></li>
-                <li><a href="/Cartable">کارتابل</a></li>
-                <li><a href="#" @onclick="Logout">خروج</a></li>
-            </ul>
-        </nav>
-    }
-
-    <div class="main-content">
-        @Body
+<div class="page">
+    <!-- Sidebar navigation -->
+    <div class="sidebar">
+        <NavMenu />
     </div>
-</div>
 
-@code {
-    private bool IsLoginPage => NavigationManager.Uri.EndsWith("/login");
-        [Parameter] public EventCallback OnLogout { get; set; }
-    [Inject] private IAuthService AuthService { get; set; } = default!;
-    [Inject] private NavigationManager Navigation { get; set; } = default!;
-    [Inject] private AuthState AuthState { get; set; } = default!;
-    private async Task Logout()
-    {
-        await AuthService.LogoutAsync();
-        AuthState.IsAuthenticated = false;
-        Navigation.NavigateTo("/login", true);
-    }
-}
+    <main>
+        <!-- Top row for additional links -->
+        <div class="top-row px-4">
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+        </div>
+
+        <!-- Main content area -->
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>

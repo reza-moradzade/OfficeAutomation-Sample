@@ -1,12 +1,364 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\wwwroot\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\layout\\emptylayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\layout\\emptylayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\models\\authresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\models\\authresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\models\\cartableitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\models\\cartableitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\models\\cartableresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\models\\cartableresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\pages\\cartable.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\pages\\cartable.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\services\\implementations\\cartableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\services\\implementations\\cartableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\services\\authstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\services\\authstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\shared\\applayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\shared\\applayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|c:\\projects\\officeautomation-sample\\fullstack-csharpnet\\frontend\\officeautomation.blazor\\officeautomation.blazor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C12C94BE-EB76-45DD-A46C-83ED180591FD}|OfficeAutomation.Blazor\\OfficeAutomation.Blazor.csproj|solutionrelative:officeautomation.blazor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\wwwroot\\index.html",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\wwwroot\\index.html",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\wwwroot\\index.html",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\wwwroot\\index.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-24T19:32:20.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmptyLayout.razor",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Layout\\EmptyLayout.razor",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Layout\\EmptyLayout.razor",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Layout\\EmptyLayout.razor",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Layout\\EmptyLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-24T19:31:57.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Layout\\MainLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-24T19:31:35.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAABIAAAAAAAAAAAAqwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-24T19:31:03.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthResponse.cs",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Models\\AuthResponse.cs",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Models\\AuthResponse.cs",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Models\\AuthResponse.cs",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Models\\AuthResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T19:30:41.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CartableItemDto.cs",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Models\\CartableItemDto.cs",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Models\\CartableItemDto.cs",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Models\\CartableItemDto.cs",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Models\\CartableItemDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T19:28:36.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CartableResponse.cs",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Models\\CartableResponse.cs",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Models\\CartableResponse.cs",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Models\\CartableResponse.cs",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Models\\CartableResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T19:28:15.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Cartable.razor",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Pages\\Cartable.razor",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Pages\\Cartable.razor",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Pages\\Cartable.razor",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Pages\\Cartable.razor",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAqwD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-24T19:27:51.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Pages\\Home.razor",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Pages\\Home.razor",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-24T19:27:35.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.razor",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Pages\\Index.razor",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Pages\\Index.razor",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Pages\\Index.razor",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Pages\\Index.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-24T19:27:14.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Pages\\Login.razor",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Pages\\Login.razor",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Pages\\Login.razor",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAGwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-24T19:26:31.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CartableService.cs",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Services\\Implementations\\CartableService.cs",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Services\\Implementations\\CartableService.cs",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Services\\Implementations\\CartableService.cs",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Services\\Implementations\\CartableService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T19:25:41.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Services\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Services\\Interfaces\\IAuthService.cs*",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Services\\Interfaces\\IAuthService.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T19:25:08.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Services\\AuthService.cs",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T19:21:04.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AuthState.cs",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Services\\AuthState.cs",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Services\\AuthState.cs",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Services\\AuthState.cs",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Services\\AuthState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T19:20:32.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Services\\TokenService.cs",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Services\\TokenService.cs",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Services\\TokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T19:20:06.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AppLayout.razor",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Shared\\AppLayout.razor",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Shared\\AppLayout.razor",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Shared\\AppLayout.razor",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Shared\\AppLayout.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-24T19:18:52.276Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\_Imports.razor",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\_Imports.razor",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\_Imports.razor",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-24T19:18:13.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\App.razor",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\App.razor",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\App.razor",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-24T19:17:00.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Program.cs",
+              "RelativeDocumentMoniker": "OfficeAutomation.Blazor\\Program.cs",
+              "ToolTip": "C:\\Projects\\OfficeAutomation-Sample\\Fullstack-CSharpNET\\Frontend\\OfficeAutomation.Blazor\\OfficeAutomation.Blazor\\Program.cs",
+              "RelativeToolTip": "OfficeAutomation.Blazor\\Program.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAuwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T19:16:25.726Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

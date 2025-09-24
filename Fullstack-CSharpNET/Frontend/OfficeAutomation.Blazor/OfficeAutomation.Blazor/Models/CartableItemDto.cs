@@ -1,18 +1,21 @@
-﻿namespace OfficeAutomation.Blazor.Models
+﻿using System;
+
+namespace OfficeAutomation.Blazor.Models
 {
+    // Data Transfer Object representing a cartable item
     public class CartableItemDto
     {
-        public int CartableId { get; set; }       // شناسه رکورد کارتابل
-        public int TaskId { get; set; }           // شناسه تسک مرتبط
-        public string Title { get; set; } = "";   // عنوان تسک
-        public string? Description { get; set; }  // توضیحات تسک
-        public string Status { get; set; } = "";  // وضعیت (Pending, InProgress, Completed, ...)
-        public DateTime? DueDate { get; set; }    // تاریخ سررسید
-        public bool IsRead { get; set; }          // خوانده شده یا خیر
-        public DateTime ReceivedAt { get; set; }  // تاریخ دریافت
+        public int CartableId { get; set; }          // Unique ID of the cartable record
+        public int TaskId { get; set; }              // Related task ID
+        public string Title { get; set; } = "";      // Task title
+        public string? Description { get; set; }     // Task description
+        public string Status { get; set; } = "";     // Status (Pending, InProgress, Completed, etc.)
+        public DateTime? DueDate { get; set; }       // Optional due date
+        public bool IsRead { get; set; }             // Indicates whether the item has been read
+        public DateTime ReceivedAt { get; set; }     // Date and time the item was received
 
-        // 🔹 این دو پراپرتی جدید برای نمایش اطلاعات کاربر مسئول
-        public string? AssignedToUserName { get; set; }
-        public string? AssignedToFullName { get; set; }
+        // Additional properties for displaying the assigned user
+        public string? AssignedToUserName { get; set; } // Username of the assigned user
+        public string? AssignedToFullName { get; set; } // Full name of the assigned user
     }
 }

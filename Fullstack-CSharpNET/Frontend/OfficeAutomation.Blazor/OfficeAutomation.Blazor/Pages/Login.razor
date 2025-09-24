@@ -1,25 +1,28 @@
 ﻿@page "/login"
 @layout EmptyLayout
-@inject NavigationManager NavigationManager
-@inject IAuthService AuthService
-@inject AuthState AuthState
+@inject NavigationManager NavigationManager  // Handles page navigation
+@inject IAuthService AuthService             // Authentication service
+@inject AuthState AuthState                  // Tracks authentication state
 @using MudBlazor
 
 <style>
+    /* Industrial-style login card */
     .industrial-login-card {
-        background: linear-gradient(145deg, #1e3c72, #2a5298); /* آبی صنعتی */
+        background: linear-gradient(145deg, #1e3c72, #2a5298); /* Industrial blue gradient */
         color: white;
         padding: 2rem;
         border-radius: 10px;
         box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
+        /* Input field styling */
         .industrial-login-card .mud-input-root input {
-            color: #000; /* متن داخل فیلد */
-            background-color: #e0f0ff; /* زمینه فیلد آبی روشن */
+            color: #000; /* Text color inside input */
+            background-color: #e0f0ff; /* Light blue input background */
             border-radius: 5px;
         }
 
+        /* Button styling */
         .industrial-login-card .mud-button-root {
             background-color: #0056b3;
             color: white;
@@ -33,16 +36,20 @@
 <MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-center align-center" Style="height:100vh;">
     <MudCard Class="industrial-login-card" Style="width:100%; max-width:400px;">
         <MudCardContent>
+            <!-- Page title -->
             <MudText Typo="Typo.h5" Align="Align.Center" Class="mb-4">Login</MudText>
 
+            <!-- Username and Password fields -->
             <MudTextField @bind-Value="Username" Label="Username" Variant="@Variant.Filled" Required="true" Class="mb-3" />
             <MudTextField @bind-Value="Password" Label="Password" Variant="@Variant.Filled" InputType="InputType.Password" Required="true" Class="mb-3" />
 
+            <!-- Display error message if login fails -->
             @if (!string.IsNullOrEmpty(ErrorMessage))
             {
                 <MudText Color="Color.Error" Class="mb-3">@ErrorMessage</MudText>
             }
 
+            <!-- Login button -->
             <MudButton Variant="@Variant.Filled" Color="@Color.Primary" FullWidth="true" Disabled="@isLoading" @onclick="LoginAsync">
                 @if (isLoading)
                 {
@@ -64,6 +71,7 @@
     private string ErrorMessage = string.Empty;
     private bool isLoading = false;
 
+    // Handles the login process
     private async Task LoginAsync()
     {
         ErrorMessage = string.Empty;
@@ -74,11 +82,13 @@
             var result = await AuthService.LoginAsync(Username, Password);
             if (result != null)
             {
+                // Update AuthState with user info
                 AuthState.IsAuthenticated = true;
                 AuthState.Token = result.Token;
                 AuthState.UserName = result.UserName;
                 AuthState.FullName = result.FullName;
 
+                // Navigate to home page after successful login
                 NavigationManager.NavigateTo("/home");
             }
             else
