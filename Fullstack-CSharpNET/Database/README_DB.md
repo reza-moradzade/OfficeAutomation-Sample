@@ -1,66 +1,69 @@
 # OfficeAutomation Sample Database
 
 This is a **sample SQL Server database** designed for a **small but professional Office Automation system**.  
-The main goal is to **demonstrate database structure design, security, auditing, and optimization** in a compact sample, ready for portfolio and learning purposes.
+The goal is to **demonstrate database design, security, auditing, and optimization** in a compact structure, suitable for **portfolio and learning purposes**.
 
 ---
 
-## 🔧 Technologies
+## echnologies
 
 - **Database:** SQL Server  
-- **ORM / API:** None, implemented directly in SQL  
+- **ORM / API:** None (pure SQL implementation)  
 - **Tools:** SQL Server Management Studio, Visual Studio, Git  
-- **Purpose:** Portfolio, learning, and demonstration of professional database design  
+- **Purpose:** Portfolio, learning, and demonstration of professional database practices  
 
 ---
 
-## 📂 Key Features
+## Key Features
 
-### 1️⃣ User Management & Security
+### 1 User Management & Security
 - **Users, Roles, UserRoles:** Role-Based Access Control (RBAC)  
-- **EmailVerifications:** Tracks email confirmation status  
-- **PasswordHash** + **PasswordSalt** for secure authentication  
-- **IsDeleted** + **RowVersion** columns for soft deletes and concurrency control  
+- **EmailVerifications:** Email confirmation workflow  
+- **PasswordHash + PasswordSalt:** Secure authentication mechanism  
+- **IsDeleted + RowVersion:** Soft deletes and concurrency control  
 
-### 2️⃣ Sessions & Authentication
-- **UserSessions:** Tracks user sessions and last activity (`LastActivity`)  
-- **RefreshTokens:** Full token lifecycle management (`IsRevoked`, `ReplacedByToken`)  
+### 2 Sessions & Authentication
+- **UserSessions:** Tracks active sessions and `LastActivity`  
+- **RefreshTokens:** Token lifecycle management (`IsRevoked`, `ReplacedByToken`)  
 - **CaptchaAttempts:** Prevents automated login attempts  
-- **Single active session per client type** enforced  
+- **FailedLoginAttempts:** Detects brute-force attacks  
+- Supports **single active session per client type**  
 
-### 3️⃣ Auditing & Logging
-- **AuditLogs & AuditLogs_Archive:** Complete activity tracking with archival support  
-- **FailedLoginAttempts:** Monitors unsuccessful login attempts  
+### 3 Auditing & Logging
+- **AuditLogs + AuditLogs_Archive:** Activity tracking with archival  
 - Indexed for **fast reporting and monitoring**  
+- Logs linked to `UserId` for accountability  
 
-### 4️⃣ Task & File Management
-- **Tasks + Cartable:** Manages tasks and user inbox (Kartable)  
-- **Files:** Supports attachments linked to tasks  
-- Optimized for **fast access to tasks and inbox items**  
+### 4 Task & File Management
+- **Tasks + Cartable:** Workflow management and user inbox (Kartable)  
+- **Files:** File attachments with metadata and versioning  
+- Optimized for **fast retrieval of tasks and files**  
 
-### 5️⃣ Optimization & Sample Design
-- Indexed for **quick lookup of users, sessions, logs, and tasks**  
-- Designed for **concurrency and security testing** in a small sample  
-- Demonstrates **professional database design best practices**  
+### 5 Optimization & Best Practices
+- Proper **indexes** on sessions, logs, and user tables  
+- Designed for **security, concurrency, and performance testing**  
+- Demonstrates **enterprise-grade schema design in small scale**  
 
-### 6️⃣ Monitoring & Maintenance
-- `LastActivity` column allows detecting inactive sessions  
-- `RowVersion` ensures safe concurrent updates  
-- Stored procedures provided for **archiving logs** and **cleaning up expired sessions**  
-
----
-
-## 🛠️ Getting Started
-
-1. Execute the provided SQL script (`OfficeAutomationDB.sql`) in **SQL Server Management Studio**  
-2. Explore tables, indexes, and stored procedures to understand professional database structure  
-3. Test queries and sample operations to experience session management, auditing, and task handling  
+### 6 Monitoring & Maintenance
+- `LastActivity` enables detection of inactive sessions  
+- `RowVersion` ensures safe updates under concurrency  
+- Stored procedures for:
+  - **Archiving logs** (`sp_ArchiveAuditLogs`)  
+  - **Cleaning up expired sessions** (`sp_CleanupExpiredSessions`)  
 
 ---
 
-## 📌 Notes
+## Getting Started
 
-- This is a **small sample database** and **not intended for production use**.  
-- Large files should be stored externally (filesystem or object storage).  
-- Tokens and sessions are **managed for demonstration and learning purposes**.  
-- Always use `RowVersion` in updates to prevent data conflicts.
+1. Run the provided SQL script inside **SQL Server Management Studio**.  
+2. Review database objects: **tables, views, indexes, and stored procedures**.  
+3. Test queries to explore **user sessions, auditing, and cartable functionality**.  
+
+---
+
+## Notes
+
+- This database is a **sample** and **not intended for production use**.  
+- Large files should be stored externally (e.g., filesystem, object storage).  
+- Tokens and sessions are managed for **learning and demonstration purposes**.  
+- Always use **RowVersion** in update operations to avoid conflicts.  

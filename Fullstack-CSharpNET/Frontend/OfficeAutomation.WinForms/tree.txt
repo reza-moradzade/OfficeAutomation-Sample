@@ -1,0 +1,65 @@
+OfficeAutomation.WinForms
+|   OfficeAutomation.WinForms.sln
+|   README.md
+|   tree.txt
+|   
++---OfficeAutomation.Client
+|   |   OfficeAutomation.Client.csproj
+|   |   
+|   +---Exceptions
+|   |       ApiException.cs
+|   |       
+|   +---Implementations
+|   |       ApiClientBase.cs
+|   |       AuthClient.cs
+|   |       CartableClient.cs
+|   |       
+|   +---Interfaces
+|   |       IAuthClient.cs
+|   |       ICartableClient.cs
+|   |       
+|   +---Models
+|   |       AuthResultDto.cs
+|   |       CartableItemDto.cs
+|   |       LoginDto.cs
+|   |       
+|   \---Services
+|           SessionManager.cs
+|           
++---OfficeAutomation.Login
+|       App.xaml
+|       App.xaml.cs
+|       AssemblyInfo.cs
+|       MainWindow.xaml
+|       MainWindow.xaml.cs
+|       OfficeAutomation.Login.csproj
+|       OfficeAutomation.Login.csproj.user
+|       
+\---OfficeAutomation.WinForms
+    |   OfficeAutomation.WinForms.csproj
+    |   OfficeAutomation.WinForms.csproj.user
+    |   Program.cs
+    |   
+    \---Presentation
+        +---Controls
+        |       BaseContentControl.cs
+        |       BaseContentControl.Designer.cs
+        |       BaseContentControl.resx
+        |       
+        +---Forms
+        |       MainForm.cs
+        |       MainForm.Designer.cs
+        |       MainForm.resx
+        |       
+        +---Helpers
+        |       MenuHelper.cs
+        |       MessageHelper.cs
+        |       
+        \---Views
+                CartableView.cs
+                CartableView.Designer.cs
+                CartableView.resx
+                HomeView.cs
+                HomeView.Designer.cs
+                HomeView.resx
+                

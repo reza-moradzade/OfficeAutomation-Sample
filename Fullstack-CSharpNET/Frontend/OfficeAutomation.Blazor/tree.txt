@@ -1,21 +1,37 @@
+OfficeAutomation.Blazor
+|   OfficeAutomation.Blazor.sln
+|   README.md
+|   tree.txt
+|   
 \---OfficeAutomation.Blazor
-    |   App.razor
+    |   OfficeAutomation.Blazor.csproj
+    |   OfficeAutomation.Blazor.csproj.user
     |   Program.cs
-    |   _Imports.razor
-    +---Layout
-    |       EmptyLayout.razor
-    |       MainLayout.razor
-    |       
+    |   
+    +---Components
+    |   |   App.razor
+    |   |   _Imports.razor
+    |   |   
+    |   +---Layout
+    |   |       EmptyLayout.razor
+    |   |       MainLayout.razor
+    |   |       MainLayout.razor.css
+    |   |       NavMenu.razor
+    |   |       NavMenu.razor.css
+    |   |       
+    |   +---Pages
+    |   |       Cartable.razor
+    |   |       Home.razor
+    |   |       Index.razor
+    |   |       Login.razor
+    |   |       
+    |   \---Shared
+    |           AppLayout.razor
+    |           
     +---Models
     |       AuthResponse.cs
     |       CartableItemDto.cs
     |       CartableResponse.cs
-    |       
-    +---Pages
-    |       Cartable.razor
-    |       Home.razor
-    |       Index.razor
-    |       Login.razor
     |       
     +---Properties
     |       launchSettings.json
@@ -31,10 +47,8 @@
     |   \---Interfaces
     |           IAuthService.cs
     |           
-    +---Shared
-    |       AppLayout.razor
-    |       
     \---wwwroot
+        |   favicon.png
         |   icon-192.png
         |   icon-512.png
         |   index.html
@@ -42,6 +56,13 @@
         |   service-worker.js
         |   service-worker.published.js
         |   
-        \---css
-                app.css
+        +---css
+        |   |   app.css
+        |   |   
+        |   \---bootstrap
+        |           bootstrap.min.css
+        |           bootstrap.min.css.map
+        |           
+        \---sample-data
+                weather.json
                 

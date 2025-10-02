@@ -1,0 +1,34 @@
+officeautomation-Vue
+|   .gitignore
+|   index.html
+|   package-lock.json
+|   package.json
+|   README.md
+|   tree.txt
+|   tsconfig.app.json
+|   tsconfig.json
+|   tsconfig.node.json
+|   vite.config.ts
+|   
++---public
+|       vite.svg
+|       
+\---src
+    |   App.vue
+    |   main.ts
+    |   style.css
+    |   
+    +---assets
+    |       vue.svg
+    |       
+    +---components
+    |       Sidebar.vue
+    |       
+    +---router
+    |       index.ts
+    |       
+    \---views
+            Cartable.vue
+            Home.vue
+            Login.vue
+            

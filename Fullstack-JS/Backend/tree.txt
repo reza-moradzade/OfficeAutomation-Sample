@@ -1,0 +1,37 @@
+officeautomation-NodeJS
+|   .env
+|   package-lock.json
+|   package.json
+|   tree.txt
+|   
+\---src
+    |   app.js
+    |   server.js
+    |   
+    +---config
+    |       database.js
+    |       swagger.js
+    |       
+    +---controllers
+    |       AuthController.js
+    |       CartableController.js
+    |       
+    +---middlewares
+    |       authMiddleware.js
+    |       
+    +---repositories
+    |       CartableRepository.js
+    |       UserRepository.js
+    |       
+    +---routes
+    |       authRoutes.js
+    |       cartableRoutes.js
+    |       
+    +---services
+    |       AuthService.js
+    |       CartableService.js
+    |       
+    \---utils
+            cryptoUtil.js
+            jwtUtil.js
+            

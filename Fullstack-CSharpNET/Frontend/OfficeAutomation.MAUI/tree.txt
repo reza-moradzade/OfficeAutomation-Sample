@@ -1,0 +1,96 @@
+OfficeAutomation.MAUI
+|   OfficeAutomation.MAUI.sln
+|   README.md
+|   tree.txt
+|   
++---OfficeAutomation.MAUI
+|   |   App.xaml
+|   |   App.xaml.cs
+|   |   MainPage.xaml
+|   |   MainPage.xaml.cs
+|   |   MauiProgram.cs
+|   |   OfficeAutomation.MAUI.csproj
+|   |   OfficeAutomation.MAUI.csproj.user
+|   |   
+|   +---Components
+|   |   |   Routes.razor
+|   |   |   _Imports.razor
+|   |   |   
+|   |   +---Layout
+|   |   |       EmptyLayout.razor
+|   |   |       MainLayout.razor
+|   |   |       MainLayout.razor.css
+|   |   |       NavMenu.razor
+|   |   |       NavMenu.razor.css
+|   |   |       
+|   |   +---Pages
+|   |   |       Cartable.razor
+|   |   |       Home.razor
+|   |   |       Index.razor
+|   |   |       Login.razor
+|   |   |       
+|   |   \---Shared
+|   |           AppLayout.razor
+|   |           
+|   +---Models
+|   |       AuthResponse.cs
+|   |       CartableItemDto.cs
+|   |       CartableResponse.cs
+|   |       
+|   +---Platforms
+|   |   \---Android
+|   |       |   AndroidManifest.xml
+|   |       |   MainActivity.cs
+|   |       |   MainApplication.cs
+|   |       |   
+|   |       \---Resources
+|   |           \---values
+|   |                   colors.xml
+|   |                   
+|   +---Properties
+|   |       launchSettings.json
+|   |       
+|   +---Resources
+|   |   +---AppIcon
+|   |   |       appicon.svg
+|   |   |       appiconfg.svg
+|   |   |       
+|   |   +---Fonts
+|   |   |       OpenSans-Regular.ttf
+|   |   |       
+|   |   +---Images
+|   |   |       dotnet_bot.svg
+|   |   |       
+|   |   +---Raw
+|   |   |       AboutAssets.txt
+|   |   |       
+|   |   \---Splash
+|   |           splash.svg
+|   |           
+|   +---Services
+|   |   |   AuthService.cs
+|   |   |   AuthState.cs
+|   |   |   TokenService.cs
+|   |   |   
+|   |   +---Implementations
+|   |   |       CartableService.cs
+|   |   |       
+|   |   \---Interfaces
+|   |           IAuthService.cs
+|   |           
+|   \---wwwroot
+|       |   favicon.png
+|       |   index.html
+|       |   
+|       \---css
+|           |   app.css
+|           |   
+|           \---bootstrap
+|                   bootstrap.min.css
+|                   bootstrap.min.css.map
+|                   
+\---publish
+        com.companyname.officeautomation.maui-Signed.apk
+        com.companyname.officeautomation.maui.apk
+        _Microsoft.Android.Resource.Designer.dll
+        

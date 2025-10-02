@@ -1,0 +1,44 @@
+officeautomation-NativeScriptVue
+|   .editorconfig
+|   .gitignore
+|   jsconfig.json
+|   nativescript.config.ts
+|   package-lock.json
+|   package.json
+|   README.md
+|   tree.txt
+|   webpack.config.js
+|   
++---app
+|   |   app.android.scss
+|   |   app.ios.scss
+|   |   app.js
+|   |   _app-common.scss
+|   |   
+|   +---components
+|   |       App.vue
+|   |       Cartable.vue
+|   |       ItemDetails.vue
+|   |       Items.vue
+|   |       Login.vue
+|   |       Search.vue
+|   |       SecureForm.vue
+|   |       
+|   +---fonts
+|   |       fa-brands-400.ttf
+|   |       fa-regular-400.ttf
+|   |       fa-solid-900.ttf
+|   |       
+|   \---services
+|           auth.js
+|           
++---App_Resources
+|   \---Android
+|       |   app.gradle
+|       |   before-plugins.gradle
+|       |   
+|       \---src
+\---hooks
+    \---before-checkForChanges
+            nativescript-core.js
+            

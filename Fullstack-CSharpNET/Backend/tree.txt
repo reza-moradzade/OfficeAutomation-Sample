@@ -1,0 +1,95 @@
+ASPNetCoreAPI
+|   OfficeAutomation.API.sln
+|   tree.txt
+|   
++---OfficeAutomation.API
+|   |   appsettings.Development.json
+|   |   appsettings.json
+|   |   OfficeAutomation.API.csproj
+|   |   OfficeAutomation.API.csproj.user
+|   |   OfficeAutomation.API.http
+|   |   Program.cs
+|   |   
+|   +---Controllers
+|   |       AuthController.cs
+|   |       CartableController.cs
+|   |       
+|   \---Properties
+|           launchSettings.json
+|           
++---OfficeAutomation.Core
+|   |   OfficeAutomation.Core.csproj
+|   |   
+|   +---DTOs
+|   |       AuthResultDto.cs
+|   |       CartableItemDto.cs
+|   |       LoginDto.cs
+|   |       LogoutDto.cs
+|   |       
+|   \---Entities
+|       +---Cartables
+|       |       Cartable.cs
+|       |       
+|       +---Security
+|       |       AuditLog.cs
+|       |       FailedLoginAttempt.cs
+|       |       RefreshToken.cs
+|       |       
+|       +---Tasks
+|       |       TaskEntity.cs
+|       |       
+|       \---Users
+|               Role.cs
+|               User.cs
+|               UserRole.cs
+|               UserSession.cs
+|               
++---OfficeAutomation.Data
+|   |   OfficeAutomation.Data.csproj
+|   |   
+|   +---Configurations
+|   |       RefreshTokenConfiguration.cs
+|   |       
+|   \---Context
+|           OfficeAutomationDbContext.cs
+|           
++---OfficeAutomation.Repositories
+|   |   OfficeAutomation.Repositories.csproj
+|   |   
+|   +---Base
+|   |       IRepository.cs
+|   |       IUnitOfWork.cs
+|   |       RepositoryBase.cs
+|   |       UnitOfWork.cs
+|   |       
+|   +---Implementations
+|   |       AuditLogRepository.cs
+|   |       AuthRepository.cs
+|   |       CartableRepository.cs
+|   |       FailedLoginAttemptRepository.cs
+|   |       RefreshTokenRepository.cs
+|   |       TaskRepository.cs
+|   |       UserSessionRepository.cs
+|   |       
+|   \---Interfaces
+|           IAuditLogRepository.cs
+|           IAuthRepository.cs
+|           ICartableRepository.cs
+|           IFailedLoginAttemptRepository.cs
+|           IRefreshTokenRepository.cs
+|           ITaskRepository.cs
+|           IUserSessionRepository.cs
+|           
+\---OfficeAutomation.Services
+    |   OfficeAutomation.Services.csproj
+    |   
+    +---Implementations
+    |       AuditLogService.cs
+    |       AuthService.cs
+    |       CartableService.cs
+    |       
+    \---Interfaces
+            IAuditLogService.cs
+            IAuthService.cs
+            ICartableService.cs
+            
