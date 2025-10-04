@@ -1,68 +1,41 @@
-# OfficeAutomation-Sample
+# OfficeAutomation-Monolithic
 
-A **sample Office Automation system** demonstrating a **full-stack hybrid architecture** with multiple implementations:  
+A **sample Office Automation system** demonstrating a **monolithic full-stack hybrid architecture**
 
-### C# / .NET
-- **Desktop client:** Windows Forms  
-- **Web client:** Blazor Web  
-- **Mobile client:** MAUI  
+---
+
+## Projects Overview
+
+### 1. C# / .NET (Blazor WebAssembly Hosted)
+- **Frontend:** Blazor WebAssembly (WASM)  
 - **Backend:** ASP.NET Core Web API  
-- **Database:** SQL Server  
+- **Database:** SQLite (can be switched to SQL Server)  
+- **Hosting:** WebAssembly Hosted in ASP.NET Core  
 
-### JavaScript / Node.js
-- **Web client:** Vue.js Web  
-- **Mobile client:** NativeScript-Vue Mobile  
-- **Backend:** Node.js  
-- **Database:** PostgreSQL  
+### 1. Nuxt.js (Vue 3 + SSR / API Routes)
+- **Frontend:** Vue 3 + Nuxt Pages & Components (SPA or SSR)  
+- **Backend:** Nuxt 3 API Routes (Server-side endpoints)  
+- **Database:** SQLite (embedded, can be switched to MySQL/PostgreSQL)  
+- **Hosting:** Full-Stack Monolithic (SSR + API in same project)  
 
-This project is designed for **portfolio and learning purposes**, focusing on **desktop + web + mobile + API + database integration** and showcasing **end-to-end full-stack development skills**.
+This repository demonstrates a **monolithic integration** of both .NET and Nuxt.js (Vue 3) ecosystems for **portfolio, learning, and experimentation**.
 
 ---
 
 ## Features
 
-- Secure login via API  
-- Multi-layer architecture  
-- Example of **desktop, web, and mobile client integration**  
-- Supports multiple technologies for experimentation and learning (Blazor, MAUI, Vue.js, NativeScript, Node.js, SQL Server, PostgreSQL)  
-
----
-
-## Tech Stack
-
-### C# / .NET
-- **Frontend:** Windows Forms, Blazor Web, MAUI Mobile  
-- **Backend:** ASP.NET Core Web API  
-- **Database:** SQL Server  
-- **Tools:** Visual Studio, Git, HttpClient, Entity Framework  
-
-### JavaScript / Node.js
-- **Frontend:** Vue.js Web, NativeScript-Vue Mobile  
-- **Backend:** Node.js  
-- **Database:** PostgreSQL  
-- **Tools:** Visual Studio, VS Code, Git, Postman  
-
----
-
-## How to Run
-
-### C# / .NET Implementation
-1. Set up SQL Server database using the scripts in `/CSharp-NET/Database`  
-2. Start the WebAPI project  
-3. Launch the desired frontend: Windows Forms, Blazor Web, or MAUI Mobile  
-
-### JavaScript / Node.js Implementation
-1. Navigate to backend and frontend folders and install dependencies:
-2. Update PostgreSQL connection settings  
-3. Run backend and frontend projects  
+- Secure login and registration  
+- Cartable / task management example  
+- Multi-layer architecture (frontend + backend + database)   
 
 ---
 
 ## Notes
 
-This project is **for portfolio and learning purposes only**, demonstrating:
+This repository is for portfolio and learning purposes, demonstrating:
 
-- **Separation of concerns**  
-- **Layered architecture design**  
-- **Hybrid integration** (desktop + web + mobile via API + database)  
-- **Multi-technology experimentation** for full-stack development skills  
+- **Monolithic hybrid integration:**
+- **End-to-end full-stack development skills**
+- **database support:** SQLite
+- **Layered architecture and API usage**
+- **Frontend and backend coordination across technologies**

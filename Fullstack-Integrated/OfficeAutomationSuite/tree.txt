@@ -1,0 +1,81 @@
+OfficeAutomationSuite
+|   
++---Client
+|   |   App.razor
+|   |   MainLayout.razor
+|   |   OfficeAutomationSuite.Client.csproj
+|   |   OfficeAutomationSuite.Client.csproj.user
+|   |   Program.cs
+|   |   _Imports.razor
+|   |   
+|   +---Pages
+|   |       Cartable.razor
+|   |       ForgotPassword.razor
+|   |       Index.razor
+|   |       Login.razor
+|   |       Register.razor
+|   |       
+|   +---Properties
+|   |       launchSettings.json
+|   |       
+|   +---Services
+|   |       CartableService.cs
+|   |       UserService.cs
+|   |       
+|   \---wwwroot
+|       |   icon-512.png
+|       |   index.html
+|       |   manifest.json
+|       |   service-worker.js
+|       |   service-worker.published.js
+|       |   
+|       \---css
+|               app.css
+|               
++---Server
+|   |   appsettings.Development.json
+|   |   appsettings.json
+|   |   officeautomation.db
+|   |   OfficeAutomationSuite.Server.csproj
+|   |   OfficeAutomationSuite.Server.csproj.user
+|   |   Program.cs
+|   |   
+|   +---Controllers
+|   |       CartableController.cs
+|   |       UsersController.cs
+|   |       
+|   +---Data
+|   |   |   AppDbContext.cs
+|   |   |   
+|   |   \---Entities
+|   |           Cartable.cs
+|   |           User.cs
+|   |           
+|   +---DTOs
+|   +---Migrations
+|   |       20251003121305_InitialCreate.cs
+|   |       20251003121305_InitialCreate.Designer.cs
+|   |       20251003133113_AddCartableTable.cs
+|   |       20251003133113_AddCartableTable.Designer.cs
+|   |       AppDbContextModelSnapshot.cs
+|   |       
+|   +---Properties
+|   |       launchSettings.json
+|   |       
+|   +---Repositories
+|   |       CartableRepository.cs
+|   |       UserRepository.cs
+|   |       
+|   \---Services
+|           CartableService.cs
+|           UserService.cs
+|           
+\---Shared
+    |   OfficeAutomationSuite.Shared.csproj
+    |   SharedClass.cs
+    |   
+    \---Models
+            CartableDto.cs
+            UserLoginDto.cs
+            UserRegisterDto.cs
+            

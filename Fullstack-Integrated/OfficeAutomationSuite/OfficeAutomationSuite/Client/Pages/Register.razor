@@ -1,0 +1,61 @@
+﻿@page "/register"
+@using OfficeAutomationSuite.Shared.Models
+@using OfficeAutomationSuite.Client.Services
+@inject UserService UserService
+@inject NavigationManager Navigation
+
+<h2>Register</h2>
+
+<!-- Username input -->
+<div class="form-group">
+    <label>Username</label>
+    <input @bind="username" class="form-control" />
+</div>
+
+<!-- Email input -->
+<div class="form-group">
+    <label>Email</label>
+    <input @bind="email" class="form-control" />
+</div>
+
+<!-- Full name input -->
+<div class="form-group">
+    <label>Full Name</label>
+    <input @bind="fullName" class="form-control" />
+</div>
+
+<!-- Password input -->
+<div class="form-group">
+    <label>Password</label>
+    <input type="password" @bind="password" class="form-control" />
+</div>
+
+<!-- Register button -->
+<button class="btn btn-success" @onclick="RegisterUser">Register</button>
+
+<!-- Display message -->
+<p>@message</p>
+
+@code {
+    private string username, email, fullName, password;
+    private string message;
+
+    // ---------------- Register user ----------------
+    private async Task RegisterUser()
+    {
+        var dto = new UserRegisterDto
+        {
+            Username = username,
+            Email = email,
+            FullName = fullName,
+            Password = password
+        };
+
+        // Call UserService to register the user
+        message = await UserService.RegisterAsync(dto);
+
+        // Navigate to login page if successful
+        if (message == "Success")
+            Navigation.NavigateTo("/");
+    }
+}

@@ -1,0 +1,52 @@
+your-project/
+├── server/
+│   ├── models/
+│   │   └── index.js
+│   ├── api/
+│   │   ├── auth/
+│   │   │   ├── login.post.js
+│   │   │   ├── logout.post.js
+│   │   │   └── me.get.js
+│   │   ├── documents/
+│   │   │   ├── get.js
+│   │   │   ├── post.js
+│   │   │   ├── [id].put.js
+│   │   │   └── [id].delete.js
+│   │   └── init.get.js
+│   └── middleware/
+│       └── auth.js
+├── components/
+│   ├── LoginForm.vue
+│   ├── Sidebar.vue
+│   ├── MainContent.vue
+│   ├── HomePage.vue
+│   └── CartablePage.vue
+├── pages/
+│   ├── index.vue
+│   └── dashboard.vue
+├── database.sqlite (ایجاد خودکار)
+└── app.vue
+
+------------------------------
+
+your-project/
+├── server/
+│   ├── models/
+│   │   └── index.js
+│   ├── api/
+│   │   ├── auth/
+│   │   │   ├── login.post.js
+│   │   │   ├── logout.post.js
+│   │   │   └── me.get.js
+│   │   └── documents/
+│   │       ├── get.js
+│   │       ├── post.js
+│   │       ├── [id].put.js
+│   │       └── [id].delete.js
+│   ├── middleware/
+│   │   └── auth.js
+│   └── plugins/
+│       └── database.js
+├── components/
+├── pages/
+└── app.vue

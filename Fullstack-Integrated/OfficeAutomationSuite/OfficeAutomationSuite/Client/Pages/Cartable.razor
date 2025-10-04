@@ -1,0 +1,49 @@
+﻿@page "/cartable"
+@using OfficeAutomationSuite.Shared.Models
+@inject OfficeAutomationSuite.Client.Services.CartableService CartableService
+
+<h3>My Cartables</h3>
+
+@if (cartables == null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (!cartables.Any())
+{
+    <p>No cartables available.</p>
+}
+else
+{
+    <ul>
+        @foreach (var c in cartables)
+        {
+            <li>
+                <strong>@c.Title</strong> - @c.Description
+                @if (c.IsCompleted)
+                {
+                    <span style="color: green;"> ✅ Completed</span>
+                }
+                else
+                {
+                    <span style="color: orange;"> ⏳ Pending</span>
+                }
+
+                @if (!string.IsNullOrEmpty(c.AssignedTo))
+                {
+                    <span> (Assigned to: @c.AssignedTo)</span>
+                }
+            </li>
+        }
+    </ul>
+}
+
+@code {
+    // Cartables fetched from the server
+    private List<CartableDto> cartables;
+
+    // Load cartables on component initialization
+    protected override async Task OnInitializedAsync()
+    {
+        cartables = await CartableService.GetAllCartablesAsync();
+    }
+}

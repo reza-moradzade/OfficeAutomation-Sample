@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36109.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeAutomationSuite.Server", "OfficeAutomationSuite\Server\OfficeAutomationSuite.Server.csproj", "{90B5E73B-8BA4-4186-9BB1-1C51A399DC3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeAutomationSuite.Client", "OfficeAutomationSuite\Client\OfficeAutomationSuite.Client.csproj", "{E660A519-7473-4007-8C20-83EC1CBC368E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeAutomationSuite.Shared", "OfficeAutomationSuite\Shared\OfficeAutomationSuite.Shared.csproj", "{0ED42EB9-2844-4616-A7BD-8268985CA274}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90B5E73B-8BA4-4186-9BB1-1C51A399DC3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90B5E73B-8BA4-4186-9BB1-1C51A399DC3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90B5E73B-8BA4-4186-9BB1-1C51A399DC3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90B5E73B-8BA4-4186-9BB1-1C51A399DC3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E660A519-7473-4007-8C20-83EC1CBC368E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E660A519-7473-4007-8C20-83EC1CBC368E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E660A519-7473-4007-8C20-83EC1CBC368E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E660A519-7473-4007-8C20-83EC1CBC368E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ED42EB9-2844-4616-A7BD-8268985CA274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED42EB9-2844-4616-A7BD-8268985CA274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ED42EB9-2844-4616-A7BD-8268985CA274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED42EB9-2844-4616-A7BD-8268985CA274}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2F74B1B-4304-4C4F-BF4A-B6EF832104AB}
+	EndGlobalSection
+EndGlobal

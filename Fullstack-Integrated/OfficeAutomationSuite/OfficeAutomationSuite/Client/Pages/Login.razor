@@ -1,0 +1,69 @@
+﻿@page "/"
+@using OfficeAutomationSuite.Client.Services
+@inject NavigationManager Navigation
+@inject UserService UserService
+@inject IJSRuntime JS
+
+<div class="login-container">
+    <h2>Login</h2>
+
+    <!-- Username input -->
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input id="username" @bind="Username" type="text" class="form-control" />
+    </div>
+
+    <!-- Password input -->
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" @bind="Password" type="password" class="form-control" />
+    </div>
+
+    <!-- Login button -->
+    <button class="btn btn-primary" @onclick="HandleLogin">Login</button>
+
+    <!-- Display error message -->
+    @if (!string.IsNullOrEmpty(ErrorMessage))
+    {
+        <div class="alert alert-danger mt-2">@ErrorMessage</div>
+    }
+
+    <!-- Links to register or forgot password -->
+    <div class="links mt-2">
+        <a href="/register">Register</a> | <a href="/forgot-password">Forgot Password?</a>
+    </div>
+</div>
+
+@code {
+    private string Username { get; set; }
+    private string Password { get; set; }
+    private string ErrorMessage { get; set; }
+
+    // ---------------- Handle login ----------------
+    private async Task HandleLogin()
+    {
+        ErrorMessage = string.Empty;
+
+        var dto = new OfficeAutomationSuite.Shared.Models.UserLoginDto
+        {
+            Username = Username,
+            Password = Password
+        };
+
+        // Call UserService to login
+        var token = await UserService.LoginAsync(dto);
+
+        if (token == null)
+        {
+            // Display error if login failed
+            ErrorMessage = "Invalid username or password.";
+            return;
+        }
+
+        // Save JWT token in localStorage
+        await JS.InvokeVoidAsync("localStorage.setItem", "authToken", token);
+
+        // Navigate to home page after successful login
+        Navigation.NavigateTo("/home");
+    }
+}
